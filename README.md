@@ -1,20 +1,20 @@
-# TabBlazor
+# TabloRazor
 A blazor admin template built on [Tabler](https://preview.tabler.io/)
 
 Minimal javascript!
 
-## [Demo](https://TabBlazor.github.io/TabBlazor)
+## [Demo](https://TabloRazor.github.io/TabloRazor)
 
 ### Getting Started Templates
-[TabBlazor.Templates](https://github.com/TabBlazor/TabBlazor.Templates)
+[TabloRazor.Templates](https://github.com/TabloRazor/TabloRazor.Templates)
 
 ### Nuget
-[TabBlazor](https://www.nuget.org/packages/TabBlazor/)
+[TabloRazor](https://www.nuget.org/packages/TabloRazor/)
 
 ***Work ongoing***
 
 
-![Alt text](TabBlazorDashbord.png?raw=true "Dashboard")
+![Alt text](TabloRazorDashbord.png?raw=true "Dashboard")
 
 Based on [Tabler.Blazor](https://github.com/zarxor/Tabler.Blazor) by [zarxor](https://github.com/zarxor)
 

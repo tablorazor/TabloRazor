@@ -11,7 +11,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using TabBlazor;
+using TabloRazor;
 using Tabler.Docs.Icons;
 
 namespace IconGenerator.Tabler
@@ -23,7 +23,7 @@ namespace IconGenerator.Tabler
         {
             var generatedFlags = new List<GeneratedFlag>();
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("TabBlazor", "1"));
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("TabloRazor", "1"));
 
             var countryProvider = new CountryProvider();
             var countries = countryProvider.GetCountries();
@@ -79,7 +79,7 @@ namespace IconGenerator.Tabler
 
                 if (country != null)
                 {
-                    generatedFlag.FlagType.Country = new TabBlazor.Country(country.CommonName, country.Alpha2Code.ToString(), country.Alpha3Code.ToString(), country.NumericCode);
+                    generatedFlag.FlagType.Country = new TabloRazor.Country(country.CommonName, country.Alpha2Code.ToString(), country.Alpha3Code.ToString(), country.NumericCode);
                 }
 
                 generatedFlags.Add(generatedFlag);
@@ -136,7 +136,7 @@ namespace IconGenerator.Tabler
                 {
                     throw new SystemException($"Unable to find icon {icon.Name} in sprite");
                 }
-                icon.IconType = new TabBlazor.TablerIcon(Utilities.ExtractIconElements(elements));
+                icon.IconType = new TabloRazor.TablerIcon(Utilities.ExtractIconElements(elements));
                 icons.Add(icon);
                 Console.WriteLine($"Icon '{icon.Name}' added");
             }

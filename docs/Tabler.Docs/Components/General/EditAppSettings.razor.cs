@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
-using TabBlazor;
+using TabloRazor;
 using Tabler.Docs.Services;
 
 namespace Tabler.Docs.Components.General

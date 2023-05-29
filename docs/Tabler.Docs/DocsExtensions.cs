@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TabBlazor;
+using TabloRazor;
 using Tabler.Docs.Services;
 
 namespace Tabler.Docs

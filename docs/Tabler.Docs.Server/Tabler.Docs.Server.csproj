@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\TabBlazor.QuickTable.EntityFramework\TabBlazor.QuickTable.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\src\TabloRazor.QuickTable.EntityFramework\TabloRazor.QuickTable.EntityFramework.csproj" />
     <ProjectReference Include="..\Tabler.Docs\Tabler.Docs.csproj" />
   </ItemGroup>
 

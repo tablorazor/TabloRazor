@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using TabBlazor;
-using TabBlazor.Services;
+using TabloRazor;
+using TabloRazor.Services;
 using Tabler.Docs.Icons;
 
 namespace Tabler.Docs.Components.Flags
@@ -97,7 +97,7 @@ namespace Tabler.Docs.Components.Flags
             }
 
             await tabService.CopyToClipboard(flags);
-            await toastService.AddToastAsync(new ToastModel { Title = $"{selectedFlags.Count} icons copied to clipboard", Options = new TabBlazor.ToastOptions { Delay = 2 } });
+            await toastService.AddToastAsync(new ToastModel { Title = $"{selectedFlags.Count} icons copied to clipboard", Options = new TabloRazor.ToastOptions { Delay = 2 } });
         }
     }
     

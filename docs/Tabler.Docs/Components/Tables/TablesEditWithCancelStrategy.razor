@@ -1,4 +1,4 @@
-﻿@using TabBlazor.Components.Tables
+﻿@using TabloRazor.Components.Tables
 <Row class="mb-3">
     <RowCol Sm="12" Md="6" Lg="4">
         <label class="form-label">Edit Mode</label>
@@ -38,8 +38,8 @@
 
 @code {
 
-    [Inject] TabBlazor.Services.TablerService TablerService { get; set; }
-    [Inject] TabBlazor.Services.IModalService ModalService { get; set; }
+    [Inject] TabloRazor.Services.TablerService TablerService { get; set; }
+    [Inject] TabloRazor.Services.IModalService ModalService { get; set; }
     private static List<Order> orders = SampleData.GetOrders();
   
     private TableEditMode tableEditMode;
@@ -62,7 +62,7 @@
 
     private async Task ShowDialog(string title)
     {
-        await ModalService.ShowDialogAsync(new TabBlazor.Components.Modals.DialogOptions
+        await ModalService.ShowDialogAsync(new TabloRazor.Components.Modals.DialogOptions
             {
                 CancelText = "",
                 StatusColor = TablerColor.Primary,

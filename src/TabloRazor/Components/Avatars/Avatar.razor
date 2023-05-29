@@ -1,0 +1,9 @@
+﻿@inherits TablerBaseComponent
+@namespace TabloRazor
+    <HtmlElement Tag="span"
+                 class="@ClassNames"
+                 style="@Style"
+                 @onclick="OnClick"
+                 @attributes="@UnmatchedParameters">
+        @ChildContent
+    </HtmlElement>

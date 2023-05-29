@@ -1,0 +1,23 @@
+﻿@inherits TablerBaseComponent
+@namespace TabloRazor
+
+<CascadingValue Name="Navbar" Value=this>
+    <HtmlElement Tag="@HtmlTag"
+                 class="@ClassNames"
+                 @onclick="OnClick"
+                 @attributes="@UnmatchedParameters">
+
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" @onclick="ToogleExpand">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+           
+                @ChildContent
+          
+
+
+        </div>
+    </HtmlElement>
+</CascadingValue>

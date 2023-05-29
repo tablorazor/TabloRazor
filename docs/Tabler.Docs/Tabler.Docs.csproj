@@ -29,7 +29,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\TabBlazor\TabBlazor.csproj" />
+		<ProjectReference Include="..\..\src\TabloRazor\TabloRazor.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,0 +1,12 @@
+﻿@namespace TabloRazor
+@typeparam TItem
+
+@if (Items != null)
+{
+    <CascadingValue Name="Root" Value="this">
+        <TabloRazor.Components.TreeViews.TreeViewNodes Items="Items"
+                                                      Template="Template"
+                                                      ChildSelector="ChildSelector"
+                                                      />
+    </CascadingValue>
+}

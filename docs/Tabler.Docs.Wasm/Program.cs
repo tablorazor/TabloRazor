@@ -4,7 +4,7 @@ using System;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TabBlazor.QuickTable.EntityFramework;
+using TabloRazor.QuickTable.EntityFramework;
 using Tabler.Docs.Services;
 
 namespace Tabler.Docs.Wasm
@@ -16,7 +16,7 @@ namespace Tabler.Docs.Wasm
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
             builder.Services.AddHttpClient("Local", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
-            builder.Services.AddHttpClient("GitHub", client => client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("TabBlazor", "1")));
+            builder.Services.AddHttpClient("GitHub", client => client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("TabloRazor", "1")));
             builder.Services.AddDocs();
             builder.Services.AddScoped<ICodeSnippetService, GitHubSnippetService>();
             builder.Services.AddScoped<IDataService, LocalDataService>();

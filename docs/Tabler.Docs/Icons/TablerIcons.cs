@@ -1,4 +1,4 @@
-﻿using TabBlazor;
+﻿using TabloRazor;
 
 namespace Tabler.Docs
 {
@@ -4031,7 +4031,7 @@ namespace Tabler.Docs
         public static IIconType Zzz_off => new TablerIcon(@"<path stroke='none' d='M0 0h24v24H0z' fill='none' /><path d='M4 12h6l-6 8h6' /><path d='M14 4h6l-5.146 6.862m1.146 1.138h4' /><path d='M3 3l18 18' />");
         public static IIconType Zzz => new TablerIcon(@"<path stroke='none' d='M0 0h24v24H0z' fill='none' /><path d='M4 12h6l-6 8h6' /><path d='M14 4h6l-6 8h6' />");
 
-        //TabBlazor Custom Icon
+        //TabloRazor Custom Icon
         public static IIconType X_Large => new TablerIcon(@"<path stroke='none' d='M0 0h24v24H0z' fill='none' /><line x1='23' y1='1' x2='1' y2='23' /><line x1='1' y1='1' x2='23' y2='23' />");
 
 

@@ -1,4 +1,4 @@
-﻿using TabBlazor;
+﻿using TabloRazor;
 
 namespace Tabler.Docs
 {

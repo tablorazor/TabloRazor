@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
-using TabBlazor;
+using TabloRazor;
 using Tabler.Docs.Icons;
 
 namespace IconGenerator

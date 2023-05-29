@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
+		<PackageId>TabloRazor</PackageId>
+		<Description>Blazor dashboard admin theme based on Tabler UI. Minimal Javascript</Description>
+		<Authors>Joakim Dangården</Authors>
+		<Product>TabloRazor</Product>
+		<PackageTags>Blazor Tabler Admin Theme</PackageTags>
+		<RepositoryUrl>https://github.com/joadan/TabloRazor</RepositoryUrl>
+		<PackageProjectUrl>https://joadan.github.io/TabloRazor</PackageProjectUrl>
+		<Version>1.6.9</Version>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<PackageIcon>TabloRazorLogo.png</PackageIcon>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<!--<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>-->
+
+	<ItemGroup>
+		<Content Remove="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="TabloRazorLogo.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LinqKit.Core" Version="1.2.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.16" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.16" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.0.5" Condition="'$(TargetFramework)' == 'net7.0'" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="TabloRazorLogo.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

@@ -13,7 +13,7 @@
     protected async Task ShowConfirmModal()
     {
         message = string.Empty;
-        var result = await ModalService.ShowDialogAsync(new TabBlazor.Components.Modals.DialogOptions
+        var result = await ModalService.ShowDialogAsync(new TabloRazor.Components.Modals.DialogOptions
             {
                 MainText = "Are you sure?",
                 SubText = "Please note this can not be undone",
@@ -34,7 +34,7 @@
         protected async Task ShowInfoModal()
     {
 
-        await ModalService.ShowDialogAsync(new TabBlazor.Components.Modals.DialogOptions
+        await ModalService.ShowDialogAsync(new TabloRazor.Components.Modals.DialogOptions
             {
                 MainText = "You have a new message",
                 SubText = "Check your inbox for more information",

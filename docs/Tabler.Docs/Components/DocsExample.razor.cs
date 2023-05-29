@@ -5,8 +5,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using TabBlazor;
-using TabBlazor.Services;
+using TabloRazor;
+using TabloRazor.Services;
 using Tabler.Docs.Components.TypeBrowsers;
 
 namespace Tabler.Docs.Components

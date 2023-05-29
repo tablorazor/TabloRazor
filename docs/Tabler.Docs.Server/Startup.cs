@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using TabBlazor.QuickTable.EntityFramework;
+using TabloRazor.QuickTable.EntityFramework;
 using Tabler.Docs.Services;
 
 
