@@ -4,11 +4,11 @@
 		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
 		<PackageId>TabloRazor</PackageId>
 		<Description>Blazor dashboard admin theme based on Tabler UI. Minimal Javascript</Description>
-		<Authors>Joakim Dangården</Authors>
+		<Authors>TabloRazor</Authors>
 		<Product>TabloRazor</Product>
 		<PackageTags>Blazor Tabler Admin Theme</PackageTags>
-		<RepositoryUrl>https://github.com/joadan/TabloRazor</RepositoryUrl>
-		<PackageProjectUrl>https://joadan.github.io/TabloRazor</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/tablorazor/TabloRazor</RepositoryUrl>
+		<PackageProjectUrl>https://tablorazor.github.io/TabloRazor</PackageProjectUrl>
 		<Version>1.6.9</Version>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>

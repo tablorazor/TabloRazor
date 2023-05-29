@@ -43,8 +43,8 @@ namespace Tabler.Docs.Services
 
     public class GitHubSnippetService : ICodeSnippetService
     {
-        const string repo = "joadan/Blazor-Tabler";
-        //const string baseUrl = "https://raw.githubusercontent.com/joadan/TabloRazor/master/docs/Tabler.Docs";
+        const string repo = "tablorazor/Blazor-Tabler";
+        //const string baseUrl = "https://raw.githubusercontent.com/tablorazor/TabloRazor/master/docs/Tabler.Docs";
         const string baseUrl = "https://TabloRazor.com/_content/razor_source";
      
         private readonly IHttpClientFactory httpClientFactory;
