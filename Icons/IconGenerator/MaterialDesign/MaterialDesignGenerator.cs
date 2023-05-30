@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using TabloRazor;
 using Tabler.Docs.Icons;
+using System.Linq.Expressions;
 
 namespace IconGenerator.MaterialDesign
 {
@@ -18,28 +19,38 @@ namespace IconGenerator.MaterialDesign
 
         public static async Task<IEnumerable<GeneratedIcon>> GenerateIcons()
         {
-            var icons = new List<GeneratedIcon>();
+            var icons = new System.Collections.Concurrent.ConcurrentBag<GeneratedIcon>();
             var url = "https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/meta.json";
             var client = new HttpClient();
 
             var metajson = await client.GetStringAsync(url);
             var iconsMeta = JsonSerializer.Deserialize<List<MaterialDesignIcon>>(metajson);
-
-            foreach (var iconMeta in iconsMeta)
+            Parallel.ForEach(iconsMeta,  iconMeta =>
             {
-                var icon = new GeneratedIcon
-                {
-                    Name = iconMeta.Name,
-                    Author = iconMeta.Author,
-                    Tags = iconMeta.Tags
-                };
 
-                var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
-                var svgContent = await client.GetStringAsync(iconUrl);
-                icon.IconType = new MDIcon(Utilities.ExtractIconElements(svgContent));
-                icons.Add(icon);
-                Console.WriteLine($"Icon '{icon.Name}' added");
-            }
+                var client2 = new HttpClient();
+
+                try
+                {
+                    var icon = new GeneratedIcon
+                    {
+                        Name = iconMeta.Name,
+                        Author = iconMeta.Author,
+                        Tags = iconMeta.Tags
+                    };
+
+                    var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
+                    var svgContent = client2.GetStringAsync(iconUrl).GetAwaiter().GetResult();
+                    icon.IconType = new MDIcon(Utilities.ExtractIconElements(svgContent));
+                    icons.Add(icon);
+                    Console.WriteLine($"Icon '{icon.Name}' added");
+                }
+                catch (Exception ex)
+                {
+                    var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
+                    Console.WriteLine($"Icon '{iconMeta?.Name}' couldn't download: {iconUrl}");
+                }
+            });
 
             Utilities.GenerateIconsFile("MaterialDesignIcons", icons);
 

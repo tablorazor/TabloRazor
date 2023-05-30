@@ -13,7 +13,7 @@ namespace IconGenerator
 {
     public static class Utilities
     {
-     
+
         public static string ExtractIconElements(IEnumerable<XElement> elements)
         {
             var elementsString = string.Join("", elements.Select(e => e));
@@ -77,35 +77,68 @@ namespace IconGenerator
 
         public static void GeneratFlagsFile(string fileName, IEnumerable<GeneratedFlag> flags)
         {
-            var directory = Directory.GetParent(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Parent.Parent;
+            flags = flags.ToList().OrderBy(z => z.Name);
+            var directory = Directory.GetParent(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Parent.Parent.Parent.Parent;
             var fileOutput = new StringBuilder();
+
+
+            fileOutput.AppendLine("using System;");
+            fileOutput.AppendLine("using System.Collections.Generic;");
+            fileOutput.AppendLine("using System.Linq;");
+            fileOutput.AppendLine("using System.Text;");
+            fileOutput.AppendLine("using System.Threading.Tasks;");
+            fileOutput.AppendLine("");
+            fileOutput.AppendLine("namespace TabloRazor.Assets");
+            fileOutput.AppendLine("{");
+            fileOutput.AppendLine("");
+            fileOutput.AppendLine($"\tpublic static class {fileName}");
+            fileOutput.AppendLine("\t{");
+
+
             foreach (var flag in flags)
             {
-              
-                fileOutput.AppendLine(flag.DotNetProperty);
+
+                fileOutput.AppendLine("\t\t"+flag.DotNetProperty);
             }
 
-            File.WriteAllText(Path.Combine(directory.FullName, "Generated", fileName + ".txt"), fileOutput.ToString());
-     
+            fileOutput.AppendLine("\t}");
+            fileOutput.AppendLine("}");
+
+
+            File.WriteAllText(Path.Combine(directory.FullName, "src\\TabloRazor.Assets", fileName + ".cs"), fileOutput.ToString());
+
         }
 
 
         public static void GenerateIconsFile(string fileName, IEnumerable<GeneratedIcon> icons)
         {
-            var directory = Directory.GetParent(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Parent.Parent;
+            icons = icons.ToList().OrderBy(z => z.Name);
+            var directory = Directory.GetParent(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Parent.Parent.Parent.Parent;
             var fileOutput = new StringBuilder();
+
+            fileOutput.AppendLine("using System;");
+            fileOutput.AppendLine("using System.Collections.Generic;");
+            fileOutput.AppendLine("using System.Linq;");
+            fileOutput.AppendLine("using System.Text;");
+            fileOutput.AppendLine("using System.Threading.Tasks;");
+            fileOutput.AppendLine("");
+            fileOutput.AppendLine("namespace TabloRazor.Assets");
+            fileOutput.AppendLine("{");
+            fileOutput.AppendLine("");
+            fileOutput.AppendLine($"\tpublic static class {fileName}");
+            fileOutput.AppendLine("\t{");
+
+
             foreach (var icon in icons)
             {
-                fileOutput.AppendLine(icon.DotNetProperty);
+                fileOutput.AppendLine("\t\t" + icon.DotNetProperty);
             }
 
-            File.WriteAllText(Path.Combine(directory.FullName, "Generated", fileName + ".txt"), fileOutput.ToString());
-            var json = JsonSerializer.Serialize(icons);
-            File.WriteAllText(Path.Combine(directory.FullName, "Generated", fileName + ".json"), json);
+
+            fileOutput.AppendLine("\t}");
+            fileOutput.AppendLine("}");
+
+            File.WriteAllText(Path.Combine(directory.FullName, "src\\TabloRazor.Assets", fileName + ".cs"), fileOutput.ToString());
         }
-
-     
-
-
     }
 }

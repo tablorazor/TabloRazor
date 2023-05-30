@@ -116,29 +116,36 @@ namespace IconGenerator.Tabler
 
             foreach (var iconMeta in iconsMeta)
             {
-                var icon = new GeneratedIcon
+                try
                 {
-                    Name = iconMeta.Key,
-                    Author = "Paweł Kuna",
-                    Tags = iconMeta.Value.Tags
-                };
-
-                if (!string.IsNullOrWhiteSpace(iconMeta.Value.Category))
-                {
-                    if (!icon.Tags.Contains(iconMeta.Value.Category))
+                    var icon = new GeneratedIcon
                     {
-                        icon.Tags.Add(iconMeta.Value.Category);
-                    }
-                }
+                        Name = iconMeta.Key,
+                        Author = "Paweł Kuna",
+                        Tags = iconMeta.Value.Tags
+                    };
 
-                var elements = iconElements.FirstOrDefault(x => x.Attribute("id")?.Value == $"tabler-{icon.Name}")?.Elements();
-                if (elements == null || !elements.Any())
-                {
-                    throw new SystemException($"Unable to find icon {icon.Name} in sprite");
+                    if (!string.IsNullOrWhiteSpace(iconMeta.Value.Category))
+                    {
+                        if (!icon.Tags.Contains(iconMeta.Value.Category))
+                        {
+                            icon.Tags.Add(iconMeta.Value.Category);
+                        }
+                    }
+
+                    var elements = iconElements.FirstOrDefault(x => x.Attribute("id")?.Value == $"tabler-{icon.Name}")?.Elements();
+                    if (elements == null || !elements.Any())
+                    {
+                        throw new SystemException($"Unable to find icon {icon.Name} in sprite");
+                    }
+                    icon.IconType = new TabloRazor.TablerIcon(Utilities.ExtractIconElements(elements));
+                    icons.Add(icon);
+                    Console.WriteLine($"Icon '{icon.Name}' added");
                 }
-                icon.IconType = new TabloRazor.TablerIcon(Utilities.ExtractIconElements(elements));
-                icons.Add(icon);
-                Console.WriteLine($"Icon '{icon.Name}' added");
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Icon '{iconMeta.Key}' failed");
+                }
             }
 
             Utilities.GenerateIconsFile("TablerIcons", icons);
