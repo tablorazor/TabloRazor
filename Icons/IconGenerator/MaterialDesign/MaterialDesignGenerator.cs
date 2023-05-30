@@ -11,6 +11,8 @@ using System.Xml.Linq;
 using TabloRazor;
 using Tabler.Docs.Icons;
 using System.Linq.Expressions;
+using Polly;
+using System.IO;
 
 namespace IconGenerator.MaterialDesign
 {
@@ -19,39 +21,57 @@ namespace IconGenerator.MaterialDesign
 
         public static async Task<IEnumerable<GeneratedIcon>> GenerateIcons()
         {
+            var failed = new System.Collections.Concurrent.ConcurrentBag<string>();
             var icons = new System.Collections.Concurrent.ConcurrentBag<GeneratedIcon>();
             var url = "https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/meta.json";
             var client = new HttpClient();
 
             var metajson = await client.GetStringAsync(url);
             var iconsMeta = JsonSerializer.Deserialize<List<MaterialDesignIcon>>(metajson);
+            //Build the policy
+            var retryPolicy = Policy.Handle<IOException>()
+                .WaitAndRetry(retryCount: 3, sleepDurationProvider: _ => TimeSpan.FromSeconds(1));
+
+
             Parallel.ForEach(iconsMeta,  iconMeta =>
             {
-
-                var client2 = new HttpClient();
-
-                try
-                {
-                    var icon = new GeneratedIcon
+                var handler = new HttpClientHandler();
+                handler.ClientCertificateOptions = ClientCertificateOption.Manual;
+                handler.ServerCertificateCustomValidationCallback =
+                    (httpRequestMessage, cert, cetChain, policyErrors) =>
                     {
-                        Name = iconMeta.Name,
-                        Author = iconMeta.Author,
-                        Tags = iconMeta.Tags
+                        return true;
                     };
 
-                    var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
-                    var svgContent = client2.GetStringAsync(iconUrl).GetAwaiter().GetResult();
-                    icon.IconType = new MDIcon(Utilities.ExtractIconElements(svgContent));
-                    icons.Add(icon);
-                    Console.WriteLine($"Icon '{icon.Name}' added");
+                var client2 = new HttpClient(handler);
+                
+                try
+                {
+                    retryPolicy.Execute(() =>
+                    {
+                        var icon = new GeneratedIcon
+                        {
+                            Name = iconMeta.Name,
+                            Author = iconMeta.Author,
+                            Tags = iconMeta.Tags
+                        };
+
+                        var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
+                        var svgContent = client2.GetStringAsync(iconUrl).GetAwaiter().GetResult();
+                        icon.IconType = new MDIcon(Utilities.ExtractIconElements(svgContent));
+                        icons.Add(icon);
+                        Console.WriteLine($"Icon '{icon.Name}' added");
+                    });
+
                 }
                 catch (Exception ex)
                 {
                     var iconUrl = $"https://unpkg.com/@mdi/svg/svg/{iconMeta.Name}.svg";
                     Console.WriteLine($"Icon '{iconMeta?.Name}' couldn't download: {iconUrl}");
+                    failed.Add(iconUrl);
                 }
             });
-
+            
             Utilities.GenerateIconsFile("MaterialDesignIcons", icons);
 
             return icons;
