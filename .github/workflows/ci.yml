@@ -30,7 +30,7 @@ jobs:
           run: dotnet test
 
         - name: Publish
-          run: dotnet publish Tabler.Docs.Wasm.csproj --configuration Release
+          run: dotnet publish Tabler.Docs.Wasm.csproj --configuration Release --framework net7.0
           working-directory: ./docs/Tabler.Docs.Wasm
     
         # Publish the website
