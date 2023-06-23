@@ -10,6 +10,7 @@ namespace TabloRazor.Components.Tables
     {
         ITable<Item> Table { get; set; }
         string Title { get; set; }
+        string PropertyName { get;  }
         string Width { get; set; }
         string CssClass { get; set; }
         bool Sortable { get; set; }
