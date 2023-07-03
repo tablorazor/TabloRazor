@@ -87,10 +87,15 @@ namespace TabloRazor
         private Item StateBeforeEdit;
         private bool tableInitialized;
         public string SearchText { get; set; }
-
+        private bool wasInit = false;
         protected async override Task OnParametersSetAsync()
         {
-            await Update();
+            if (typeof(TheGridDataFactory<Item>) == DataProvider?.GetType()|| !wasInit)
+            {
+                wasInit = true;
+                await Update();
+
+            }
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)

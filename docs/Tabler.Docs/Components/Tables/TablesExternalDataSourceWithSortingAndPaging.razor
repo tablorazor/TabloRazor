@@ -1,7 +1,7 @@
 ﻿@using TabloRazor.Components.Tables.Components;
 @using TabloRazor.Components.Tables;
 
-<Table Item="Item"  PageSize="10" Hover Responsive DataProvider="customDataProvider">
+<Table Item="Item" Items="Items" PageSize="10" Hover Responsive DataProvider="customDataProvider">
     <HeaderTemplate>
         <strong>Items</strong>
     </HeaderTemplate>
@@ -14,16 +14,22 @@
         </Column>
     </ChildContent>
 </Table>
-
+<Button OnClick="Load">Load</Button>
 @code {
-   
+
+    public List<Item> Items { get; set; }
+
     public class Item
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
     }
 
-
+    public void Load()
+    {
+        Items = new List<Item> { new Item { Id = Guid.NewGuid(), Name = Guid.NewGuid().ToString() } };
+        
+    }
 
     private IDataProvider<Item> customDataProvider = new MyCustomDatasource();
     public class MyCustomDatasource : IDataProvider<Item>
@@ -32,7 +38,7 @@
         {
             //here you have to implement your own service call  for data and implement correctly sorting, paging ,grouping to get full benefit of this interface and Table implementation.
             var viewResult = new List<TableResult<object, Item>>();
-            viewResult.Add(new TableResult<object, Item>(null, new List<Item> { new Item { Name = "my" }, new Item { Name = "custom" }, new Item { Name = "results" } }));
+            viewResult.Add(new TableResult<object, Item>(null, new List<Item> { new Item { Name = "my" }, new Item { Name = "custom" }, new Item { Name = DateTime.Now.ToString() } }));
 
             return await Task.FromResult(viewResult);
         }
