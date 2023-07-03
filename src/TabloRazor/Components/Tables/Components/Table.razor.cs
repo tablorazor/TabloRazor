@@ -230,7 +230,7 @@ namespace TabloRazor
             }
 
             SelectedItem = item;
-            await UpdateSelected();
+           // await UpdateSelected();
         }
 
 
