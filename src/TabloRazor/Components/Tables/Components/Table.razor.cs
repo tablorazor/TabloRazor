@@ -103,7 +103,7 @@ namespace TabloRazor
 
                 }
                 tableInitialized = true;
-                await Update();
+                //await Update();
             }
         }
 
