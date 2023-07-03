@@ -230,7 +230,10 @@ namespace TabloRazor
             }
 
             SelectedItem = item;
-           // await UpdateSelected();
+            if (ShowCheckboxes)
+            {
+                await UpdateSelected();
+            }
         }
 
 
@@ -299,7 +302,7 @@ namespace TabloRazor
         {
             if (CurrentEditItem == null || !TempItems.Any())
             {
-                TempItems = await DataProvider.GetData(Columns, this,Items, resetPage);
+                TempItems = await DataProvider.GetData(Columns, this, Items, resetPage);
                 await Refresh();
             }
         }
@@ -320,7 +323,7 @@ namespace TabloRazor
 
         public async Task MoveToItem(Item item)
         {
-            TempItems = await DataProvider.GetData(Columns, this,Items, false, true, item);
+            TempItems = await DataProvider.GetData(Columns, this, Items, false, true, item);
             await Refresh();
         }
 
@@ -389,7 +392,7 @@ namespace TabloRazor
             Items.Add(tableItem);
             EditItem(tableItem);
 
-            TempItems = await DataProvider.GetData(Columns, this,Items, false, false, tableItem);
+            TempItems = await DataProvider.GetData(Columns, this, Items, false, false, tableItem);
 
         }
 
