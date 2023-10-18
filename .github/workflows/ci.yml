@@ -27,7 +27,7 @@ jobs:
           run: dotnet workload restore
       
         - name: Test
-          run: dotnet test
+          run: dotnet test /p:CollectCoverage=true 
           
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v3
