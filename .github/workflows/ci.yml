@@ -28,6 +28,9 @@ jobs:
       
         - name: Test
           run: dotnet test /p:CollectCoverage=true 
+        
+        - name: Testing coverage result copy
+          run: copy .\TabloRazor.Tests\coverage.net7.0.json .\coverage.json
           
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v3

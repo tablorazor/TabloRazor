@@ -342,3 +342,6 @@ healthchecksdb
 # SQLLite
 *.db-shm
 *.db-wal
+/TabloRazor.Tests/coverage.net6.0.json
+/coverage.json
+/TabloRazor.Tests/coverage.net7.0.json

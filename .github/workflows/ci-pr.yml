@@ -35,8 +35,8 @@ jobs:
         
       - name: Testing
         run: dotnet test --no-build --configuration Release --no-restore --verbosity normal /p:CollectCoverage=true 
-      - name: Testing
-        run: dir
+      - name: Testing coverage result copy
+        run: copy .\TabloRazor.Tests\coverage.net7.0.json .\coverage.json
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
