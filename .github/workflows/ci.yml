@@ -27,10 +27,10 @@ jobs:
           run: dotnet workload restore
       
         - name: Test
-          run: dotnet test /p:CollectCoverage=true 
+          run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
         
         - name: Testing coverage result copy
-          run: copy .\TabloRazor.Tests\coverage.net7.0.json .\coverage.json
+          run: copy .\TabloRazor.Tests\coverage.net7.0.opencover.xml .\opencover.xml
           
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v3
