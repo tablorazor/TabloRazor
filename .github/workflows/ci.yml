@@ -28,7 +28,12 @@ jobs:
       
         - name: Test
           run: dotnet test
-
+          
+        - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v3
+          env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+            
         - name: Publish
           run: dotnet publish Tabler.Docs.Wasm.csproj --configuration Release --framework net7.0
           working-directory: ./docs/Tabler.Docs.Wasm
