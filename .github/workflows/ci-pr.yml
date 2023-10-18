@@ -32,9 +32,11 @@ jobs:
 
       - name: Building Solution
         run: dotnet build TabloRazor.sln --configuration Release --no-restore 
-
+        
       - name: Testing
         run: dotnet test --no-build --configuration Release --no-restore --verbosity normal /p:CollectCoverage=true 
+      - name: Testing
+        run: ls -la
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
