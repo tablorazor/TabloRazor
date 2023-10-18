@@ -32,6 +32,14 @@ jobs:
 
       - name: Building Solution
         run: dotnet build TabloRazor.sln --configuration Release --no-restore 
-
+        
       - name: Testing
-        run: dotnet test --no-build --configuration Release --no-restore --verbosity normal
+        run: dotnet test --no-build --configuration Release --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
+      
+      - name: Testing coverage result copy
+        run: copy .\TabloRazor.Tests\coverage.net7.0.opencover.xml .\opencover.xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

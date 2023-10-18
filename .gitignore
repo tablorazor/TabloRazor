@@ -342,3 +342,6 @@ healthchecksdb
 # SQLLite
 *.db-shm
 *.db-wal
+/TabloRazor.Tests/coverage.*.json
+/coverage.json
+/TabloRazor.Tests/**.opencover.xml
