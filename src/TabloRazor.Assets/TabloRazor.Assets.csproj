@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
 		<PackageId>TabloRazor.Assets</PackageId>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -13,10 +13,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.19" Condition="'$(TargetFramework)' == 'net6.0'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.8" Condition="'$(TargetFramework)' == 'net7.0'" />
-		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.19" Condition="'$(TargetFramework)' == 'net6.0'" />
-		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.0.8" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.*" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.*" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.*" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
 	</ItemGroup>
 
 
