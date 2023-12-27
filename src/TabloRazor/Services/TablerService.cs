@@ -13,6 +13,22 @@ namespace TabloRazor.Services
             this.jsRuntime = jSRuntime;
         }
 
+        public async Task SetTheme(bool darkTheme)
+        {
+            var theme = "";
+            if (darkTheme)
+            {
+                theme = "dark";
+            }
+
+            await jsRuntime.InvokeVoidAsync("TabloRazor.setTheme", theme);
+        }
+
+        public async Task SaveAsBinary(string fileName, string contentType, byte[] content)
+        {
+            await jsRuntime.InvokeVoidAsync("TabloRazor.saveAsBinary", fileName, contentType, content);
+        }
+
         public async Task SaveAsFile(string fileName, string href)
         {
             await jsRuntime.InvokeVoidAsync("TabloRazor.saveAsFile", fileName, href);

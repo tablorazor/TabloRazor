@@ -16,6 +16,10 @@ namespace TabloRazor.Components.Tables
         int VisibleColumnCount { get; }
         List<TableItem> SelectedItems { get; set; }
         IList<TableItem> Items { get; }
+        /// <summary>
+        /// Contains current items. It is either Items or the data from the dataprovider if dataprovider is used.
+        /// </summary>
+        IList<TableItem> CurrentItems { get; }
         IDataProvider<TableItem> DataProvider { get; set; }
         RenderFragment<TableItem> RowActionTemplate { get; set; }
         bool ShowCheckboxes { get; set; }
@@ -70,7 +74,7 @@ namespace TabloRazor.Components.Tables
         bool IsAddInProgress { get; }
         Task CloseEdit();
         Task CancelEdit();
-        bool IsRowValid { get;}
+        bool IsRowValid { get; }
         Action<TableEditPopupOptions<TItem>> EditPopupMutator { get; set; }
 
     }
@@ -85,7 +89,7 @@ namespace TabloRazor.Components.Tables
         TableItem CurrentEditItem { get; }
         Task CloseEdit();
         Task CancelEdit();
-        bool IsRowValid { get;}
+        bool IsRowValid { get; }
         bool HasActionColumn { get; }
     }
 

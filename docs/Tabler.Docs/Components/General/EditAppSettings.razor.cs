@@ -1,37 +1,42 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
+using System.Runtime.CompilerServices;
 using TabloRazor;
 using Tabler.Docs.Services;
+using TabloRazor.Services;
 
 namespace Tabler.Docs.Components.General
 {
     public partial class EditAppSettings : ComponentBase
     {
         [Inject] private AppService appService { get; set; }
+        [Inject] private TablerService tablerService { get; set; }
 
-       
-        private EditContext editContext;
+
         private AppSettings settings => appService.Settings;
-        protected override void OnInitialized()
-        {
-            
-            editContext = new EditContext(settings);
-            editContext.OnFieldChanged += OnFieldChanged;
 
-            base.OnInitialized();
-        }
-
-        private void OnFieldChanged(object sender, FieldChangedEventArgs e)
+        private void SetNavBackground(NavbarBackground navBackground)
         {
-            appService.SettingsUpdated();
-         
-        }
-
-        private void Update()
-        {
-           
+            settings.NavbarBackground = navBackground;
             appService.SettingsUpdated();
         }
+
+        private void SetNavDirection(NavbarDirection navbarDirection)
+        {
+            settings.NavbarDirection = navbarDirection;
+            appService.SettingsUpdated();
+        }
+
+
+        private async void SetDarkMode(bool value)
+        {
+            settings.DarkMode = value;
+            appService.SettingsUpdated();
+            await tablerService.SetTheme(value);
+
+        }
+     
+
     }
 }

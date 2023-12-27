@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 using System;
 
 namespace TabloRazor
@@ -7,6 +8,8 @@ namespace TabloRazor
     {
         [CascadingParameter(Name = "Navbar")] Navbar Navbar { get; set; }
         [CascadingParameter(Name = "Parent")] NavbarMenuItem ParentMenuItem { get; set; }
+
+        [Inject] private NavigationManager NavigationManager { get; set; }
 
         [Parameter] public string Href { get; set; }
         [Parameter] public string Text { get; set; }
@@ -19,6 +22,7 @@ namespace TabloRazor
 
         protected string HtmlTag => "li";
         protected bool isExpanded;
+      
         protected bool IsDropdown => SubMenu != null && Expandable;
 
         protected bool isSubMenu => ParentMenuItem != null;
@@ -27,7 +31,28 @@ namespace TabloRazor
         {
             isExpanded = Expanded;
             Navbar?.AddNavbarMenuItem(this);
+
+            NavigationManager.LocationChanged += LocationChanged;
+
         }
+
+        private void LocationChanged(object sender, LocationChangedEventArgs e)
+        {
+            StateHasChanged();
+        }
+
+        private bool IsActive()
+        {
+            if (Href == null) { return false; }
+
+            if (Navbar.NavLinkMatch == null) { return false; }
+
+            var navLinkMatch = (NavLinkMatch)Navbar.NavLinkMatch;
+
+            var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).ToLower();
+            return navLinkMatch == NavLinkMatch.All ? relativePath == Href.ToLower() : relativePath.StartsWith(Href.ToLower());
+        }
+
 
         private bool NavbarIsHorizontalAndDark => Navbar?.Background == NavbarBackground.Dark && Navbar?.Direction == NavbarDirection.Horizontal;
 
@@ -38,6 +63,7 @@ namespace TabloRazor
             .Add("cursor-pointer")
             .AddIf("dropdown", IsDropdown && !isDropEnd)
             .AddIf("dropend", IsDropdown && isDropEnd)
+            .AddIf("active", IsActive())
             .ToString();
 
         public void CloseDropdown()
@@ -61,6 +87,12 @@ namespace TabloRazor
         public void Dispose()
         {
             Navbar?.RemoveNavbarMenuItem(this);
+           
+            if (NavigationManager != null)
+            {
+                NavigationManager.LocationChanged -= LocationChanged;
+            }
+
         }
     }
 }

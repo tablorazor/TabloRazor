@@ -10,20 +10,21 @@ namespace TabloRazor
         {
             if (tablerOptions is null)
             {
-                tablerOptions = _ => {};
+                tablerOptions = _ => { };
             }
 
             services.Configure(tablerOptions);
-            
+
             return services
                 .AddScoped<ToastService>()
                 .AddScoped<TablerService>()
+                .AddScoped<IOffcanvasService, OffcanvasService>()
                 .AddScoped<IModalService, ModalService>()
                 .AddScoped<TableFilterService>()
                 .AddScoped<IFormValidator, TablerDataAnnotationsValidator>()
              .AddSingleton<FlagService>();
         }
-        
+
         public static TabloRazorBuilder AddTabloRazor(this IServiceCollection services, Action<TablerOptions> tablerOptions = null)
         {
             services
