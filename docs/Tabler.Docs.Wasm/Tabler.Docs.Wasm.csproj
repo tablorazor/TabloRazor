@@ -1,19 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-    <PropertyGroup>
-		<TargetFrameworks>net7.0</TargetFrameworks>
-        <BlazorCacheBootResources>false</BlazorCacheBootResources>
-        <WasmBuildNative>true</WasmBuildNative>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
+		<BlazorCacheBootResources>false</BlazorCacheBootResources>
+		<WasmBuildNative>true</WasmBuildNative>
+	</PropertyGroup>
 
-    <ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.19"  Condition="'$(TargetFramework)' == 'net6.0'"/>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.8"  Condition="'$(TargetFramework)' == 'net7.0'"/>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.19" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net6.0'" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.8" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.19" Condition="'$(TargetFramework)' == 'net6.0'"/>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.8" Condition="'$(TargetFramework)' == 'net7.0'"/>
-        <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.4" />
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.4" />
+		<PackageReference Include="System.Net.Http.Json" Version="6.0.1" Condition="'$(TargetFramework)' == 'net6.0'"/>
 		<PackageReference Include="System.Net.Http.Json" Version="7.0.1" Condition="'$(TargetFramework)' == 'net7.0'"/>
-    </ItemGroup>
-
+	</ItemGroup>
     <Target Name="BuildClientAssets" AfterTargets="ComputeFilesToPublish">
         <ItemGroup>
             <DistFiles Include="..\Tabler.Docs\**\*.razor" />

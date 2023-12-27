@@ -87,9 +87,17 @@ namespace TabloRazor.Components.Tables
 
             return query;
         }
-
+#if NET7_0_OR_GREATER
         [GeneratedRegex("\\d+")]
         private static partial Regex DigitRegex();
+#else
+
+        private static Regex DigitRegex()=>new Regex(@"\d+");
+       
+#endif
+
+
+
         private static IQueryable<T> NaturalOrderBy<T>(IQueryable<T> source, Expression<Func<T, object>> selectorExpr, bool desc)
         {
             var selector = selectorExpr.Compile();
