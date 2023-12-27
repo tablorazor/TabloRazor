@@ -30,6 +30,8 @@ namespace TabloRazor
         [Parameter] public string ValidationRuleSet { get; set; } = "default";
         [Parameter] public int PageSize { get; set; } = 20;
         [Parameter] public IList<Item> Items { get; set; }
+        public IList<Item> CurrentItems => Items ?? TempItems?.FirstOrDefault();
+
         [Parameter] public RenderFragment HeaderTemplate { get; set; }
         [Parameter] public RenderFragment ChildContent { get; set; }
         [Parameter] public RenderFragment<Item> DetailsTemplate { get; set; }
@@ -40,6 +42,7 @@ namespace TabloRazor
         [Parameter] public bool MultiSelect { get; set; }
         [Parameter] public EventCallback<Item> OnRowClicked { get; set; }
         [Parameter] public Func<Task<IList<Item>>> OnRefresh { get; set; }
+        [Parameter] public EventCallback<Item> OnBeforeEdit { get; set; }
         [Parameter] public EventCallback<Item> OnItemEdited { get; set; }
         [Parameter] public EventCallback<Item> OnItemAdded { get; set; }
         [Parameter] public EventCallback<Item> OnItemDeleted { get; set; }
@@ -251,9 +254,9 @@ namespace TabloRazor
 
         public async Task SelectAll()
         {
-            if (Items == null || !Items.Any()) return;
+            if (CurrentItems == null || !CurrentItems.Any()) return;
 
-            SelectedItems = Items.ToList();
+            SelectedItems = CurrentItems.ToList();
             SelectedItem = SelectedItems.First();
             await UpdateSelected();
         }
@@ -437,6 +440,11 @@ namespace TabloRazor
             if (!IsAddInProgress && onCancelStrategy == OnCancelStrategy.Revert)
             {
                 StateBeforeEdit = tableItem.Copy();
+            }
+
+            if (OnBeforeEdit.HasDelegate)
+            {
+                OnBeforeEdit.InvokeAsync(tableItem);
             }
 
             CurrentEditItem = tableItem;

@@ -3,7 +3,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "docs/dashboards",
+      "launchUrl": "docs/offcanvas",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -11,7 +11,7 @@
     "Tabler.Docs.Server": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "docs/dashboards",
+      "launchUrl": "/docs/carousel",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
