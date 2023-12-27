@@ -32,12 +32,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\src\TabloRazor.Table.WebApiDataProvider\TabloRazor.Table.WebApiDataProvider.csproj" />
 		<ProjectReference Include="..\..\src\TabloRazor\TabloRazor.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Content Update="Components\Helpers\ClickOutside\Multiple.razor">
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		</Content>
+		<Content Update="wwwroot\testdata\dumb.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 
