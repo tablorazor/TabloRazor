@@ -25,8 +25,8 @@ namespace IconGenerator.MaterialDesign
             var metajson = await client.GetStringAsync(url);
             var iconsMeta = JsonSerializer.Deserialize<List<MaterialDesignIcon>>(metajson);
             //Build the policy
-            var retryPolicy = Policy.Handle<IOException>()
-                .WaitAndRetry(retryCount: 3, sleepDurationProvider: _ => TimeSpan.FromSeconds(1));
+            var retryPolicy = Policy.Handle<Exception>()
+                .WaitAndRetry(retryCount: 10, sleepDurationProvider: _ => TimeSpan.FromSeconds(5));
 
 
             Parallel.ForEach(iconsMeta, iconMeta =>
