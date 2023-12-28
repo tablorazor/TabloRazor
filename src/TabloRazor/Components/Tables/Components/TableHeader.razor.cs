@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Linq;
+using TabloRazor;
 using TabloRazor.Components.Tables;
 
 namespace TabloRazor.Components.Tables
@@ -12,6 +13,7 @@ namespace TabloRazor.Components.Tables
         {
             return new ClassBuilder()
                 .AddIf("cursor-pointer", column.Sortable)
+                .AddIf("text-end", column.Align == Align.End)
                 .ToString();
          }
 

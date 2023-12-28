@@ -2,6 +2,7 @@
 //using Tabler.Components.Table.Components;
 using System;
 using System.Threading.Tasks;
+using TabloRazor.Components.Tables;
 using TabloRazor.Components.Tables.Components;
 
 namespace TabloRazor.Components.Tables
@@ -19,6 +20,7 @@ namespace TabloRazor.Components.Tables
         bool Visible { get; set; }
         bool SortDescending { get; }
         bool GroupBy { get; set; }
+        Align Align { get; set; }
         Task SortByAsync();
         Task GroupByMeAsync();
         Type Type { get; }
