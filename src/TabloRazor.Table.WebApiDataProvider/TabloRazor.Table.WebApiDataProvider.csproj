@@ -4,6 +4,11 @@
 		<TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<PackageId>TabloRazor.Table.WebApiDataProvider</PackageId>
+		<Description>Blazor Table WebApi Data Provider with usage of TailoredApps.Shared.Querying</Description>
+		<Authors>TabloRazor</Authors>
+		<Product>TabloRazor</Product>
+		<PackageTags>WebApi Data Provider for Tabler Admin Theme</PackageTags>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.*" Condition="'$(TargetFramework)' == 'net6.0'" />
