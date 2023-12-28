@@ -5,6 +5,10 @@
 		<PackageId>TabloRazor.Assets</PackageId>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Authors>TabloRazor</Authors>
+		<Product>TabloRazor</Product>
+		<RepositoryUrl>https://github.com/tablorazor/TabloRazor</RepositoryUrl>
+		<PackageProjectUrl>https://tablorazor.github.io/TabloRazor</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>
 		<PackageIcon>TabloRazorLogo.png</PackageIcon>

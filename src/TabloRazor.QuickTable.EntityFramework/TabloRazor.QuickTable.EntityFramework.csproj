@@ -4,6 +4,10 @@
 		<TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Authors>TabloRazor</Authors>
+		<Product>TabloRazor</Product>
+		<RepositoryUrl>https://github.com/tablorazor/TabloRazor</RepositoryUrl>
+		<PackageProjectUrl>https://tablorazor.github.io/TabloRazor</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>
 		<PackageIcon>TabloRazorLogo.png</PackageIcon>

@@ -8,6 +8,8 @@
 		<Description>Blazor Table WebApi Data Provider with usage of TailoredApps.Shared.Querying</Description>
 		<Authors>TabloRazor</Authors>
 		<Product>TabloRazor</Product>
+		<RepositoryUrl>https://github.com/tablorazor/TabloRazor</RepositoryUrl>
+		<PackageProjectUrl>https://tablorazor.github.io/TabloRazor</PackageProjectUrl>
 		<PackageTags>WebApi Data Provider for Tabler Admin Theme</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>
