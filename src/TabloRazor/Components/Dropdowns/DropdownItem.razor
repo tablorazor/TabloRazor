@@ -2,6 +2,7 @@
 @namespace TabloRazor
 
 
+<CascadingValue Name="DropdownItem" Value=this>
 <div class="@GetWrapperClass()" @onclick:stopPropagation="hasSubMenu">
 
     <HtmlElement Tag="a"
@@ -19,3 +20,5 @@
 
     </HtmlElement>
 </div>
+
+</CascadingValue>

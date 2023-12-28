@@ -6,6 +6,7 @@ namespace TabloRazor
     {
         [CascadingParameter(Name = "Dropdown")] public Dropdown Dropdown { get; set; }
         [CascadingParameter(Name = "DropdownMenu")] public DropdownMenu ParentMenu { get; set; }
+        [CascadingParameter(Name = "DropdownItem")] public DropdownItem ParentDropdownItem { get; set; }
         [Parameter] public bool Active { get; set; }
         [Parameter] public bool Disabled { get; set; }
         [Parameter] public bool Highlight { get; set; }
@@ -30,7 +31,7 @@ namespace TabloRazor
             {
                 ToogleSubMenus(e);
             }
-            else if (!hasSubMenu && Dropdown.CloseOnClick)
+            else if (!hasSubMenu && Dropdown.CloseOnClick && ParentDropdownItem !=null)
             {
                 Dropdown.Close();
             }
