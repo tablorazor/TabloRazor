@@ -5,6 +5,9 @@
 		<PackageId>TabloRazor.Assets</PackageId>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<PackageIcon>TabloRazorLogo.png</PackageIcon>
 	</PropertyGroup>
 
 
@@ -28,6 +31,12 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\TabloRazor\TabloRazor.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="TabloRazorLogo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
