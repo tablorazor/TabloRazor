@@ -54,6 +54,10 @@ jobs:
       working-directory: src/TabloRazor.Assets/bin/Release
       run: dotnet nuget push TabloRazor.Assets.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
       continue-on-error: true
+      
+    - name: Dotnet Pack 
+      working-directory: src/TabloRazor.Table.WebApiDataProvider
+      run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v}
 
     - name: Dotnet Nuget Push   
       working-directory: src/TabloRazor.Table.WebApiDataProvider/bin/Release
