@@ -10,7 +10,7 @@ namespace TabloRazor
 
         [Parameter] public bool ExpandOnClick { get; set; }
 
-      
+
 
         protected override void OnInitialized()
         {

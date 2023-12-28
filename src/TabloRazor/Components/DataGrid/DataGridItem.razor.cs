@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class DataGridItem : TablerBaseComponent
     {
         [Parameter] public string Title { get; set; }
-     
+
         [Parameter] public RenderFragment TitleTemplate { get; set; }
 
 

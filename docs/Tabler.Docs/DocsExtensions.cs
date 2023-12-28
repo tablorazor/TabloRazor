@@ -2,10 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TabloRazor;
 using Tabler.Docs.Services;
-using TabloRazor.Table.WebApiDataProvider;
-using System.Net.Http;
+using TabloRazor;
 
 namespace Tabler.Docs
 {

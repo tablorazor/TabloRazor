@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public class Country
     {
         public Country(string name, string alpha2, string alpha3, int numeric)
         {
-            Name = name; 
-            Alpha2 = alpha2; 
+            Name = name;
+            Alpha2 = alpha2;
             Alpha3 = alpha3;
             Numeric = numeric;
         }

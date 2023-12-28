@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TabloRazor;
 
@@ -29,7 +28,7 @@ namespace Tabler.Docs.Icons
             return safeName;
         }
 
-   
+
         private static string FirstCharacterToUpperCase(string text)
         {
             if (string.IsNullOrWhiteSpace(text)) { return text; }
@@ -44,6 +43,6 @@ namespace Tabler.Docs.Icons
 
     }
 
-  
+
 
 }

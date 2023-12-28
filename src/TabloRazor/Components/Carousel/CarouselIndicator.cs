@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public enum CarouselIndicator
     {
@@ -18,7 +12,7 @@ namespace TabloRazor
     {
         Horizontal = 0,
         Vertical = 1,
-      
+
     }
 
 }

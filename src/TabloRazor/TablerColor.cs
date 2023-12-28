@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public enum TablerColor
     {

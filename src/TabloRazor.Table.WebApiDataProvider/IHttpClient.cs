@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor.Table.WebApiDataProvider
+﻿namespace TabloRazor.Table.WebApiDataProvider
 {
     public interface IHttpClient
     {
-        public delegate void Unauthorized(string  message);
+        public delegate void Unauthorized(string message);
         string ServerAddress { get; }
         public Unauthorized OnUnauthorized { get; set; }
         Task<ServiceCallResult<T>> Get<T>(string requestUri, CancellationToken cancellationToken);

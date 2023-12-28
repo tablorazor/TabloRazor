@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public class HtmlElement : ComponentBase
     {

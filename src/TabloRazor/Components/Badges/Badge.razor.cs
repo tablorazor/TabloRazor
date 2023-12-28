@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public enum BadgeShape
     {
@@ -50,7 +46,7 @@ namespace TabloRazor
                    .AddIf("badge-notification", Notification)
                    .AddIf("badge-blink", Blink)
                    .AddIf("cursor-pointer", OnClick.HasDelegate);
-                 
+
 
 
                 if (BadgeType == BadgeType.Default)
@@ -69,12 +65,12 @@ namespace TabloRazor
                     builder = builder
                      .Add("badge-outline")
                     .Add(BackgroundColor.GetColorClass("text", ColorType.Default));
-              
+
 
                 }
 
 
-                    return builder.ToString(); 
+                return builder.ToString();
 
             }
         }

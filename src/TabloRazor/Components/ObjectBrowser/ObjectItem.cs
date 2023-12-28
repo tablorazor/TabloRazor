@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace TabloRazor
 {
@@ -9,14 +6,14 @@ namespace TabloRazor
     {
         private readonly Dictionary<string, object> values = new Dictionary<string, object>();
         private List<PropertyInfo> properties = new List<PropertyInfo>();
-      
+
         public ObjectItem(object myObject, IEnumerable<PropertyInfo> properties)
         {
             this.Object = myObject;
-            this.properties = properties.ToList(); 
+            this.properties = properties.ToList();
         }
 
-     
+
         public object Object { get; set; }
 
         public List<PropertyInfo> Properties => properties;

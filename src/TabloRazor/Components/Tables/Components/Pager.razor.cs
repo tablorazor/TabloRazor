@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using TabloRazor.Components.Tables;
-
-namespace TabloRazor.Components.Tables
+﻿namespace TabloRazor.Components.Tables
 {
     public class PagerBase<Item> : ComponentBase
     {

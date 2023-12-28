@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-using System.Drawing;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class Flag : TablerBaseComponent
     {
@@ -11,7 +7,7 @@ namespace TabloRazor
         [Parameter] public int Rotate { get; set; }
         [Parameter] public IFlagType FlagType { get; set; }
         [Parameter] public string CountryCode { get; set; }
-        [Parameter] public string Width  { get; set; }
+        [Parameter] public string Width { get; set; }
         [Parameter] public string Height { get; set; }
 
         protected override void OnParametersSet()

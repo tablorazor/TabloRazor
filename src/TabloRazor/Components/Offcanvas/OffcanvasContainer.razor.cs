@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.Extensions.Options;
 using TabloRazor.Components.Offcanvas;
 
 namespace TabloRazor;
@@ -22,7 +21,7 @@ public partial class OffcanvasContainer
             offcanvasService.Close();
         }
     }
-    
+
     protected void OnKeyDown(KeyboardEventArgs e, OffcanvasModel offcanvasModel)
     {
         if (e.Key == "Escape" && offcanvasModel.Options.CloseOnEsc)

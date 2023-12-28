@@ -1,7 +1,4 @@
-﻿
-using System.Reflection.Emit;
-
-namespace TabloRazor.Dashboards
+﻿namespace TabloRazor.Dashboards
 {
     public class DataFacet<TItem> where TItem : class
     {
@@ -19,20 +16,20 @@ namespace TabloRazor.Dashboards
         //public string Label { get; set; }
         public bool Active { get; set; }
         public int CountAll { get; set; }
-     //   public int CountFiltered { get; set; }
+        //   public int CountFiltered { get; set; }
         public Func<FacetFilter<TItem>, string> FilterLabel { get; set; }
 
         public string GetLabel()
         {
-                if (FilterLabel != null)
-                {
-                    return FilterLabel(this);
-                }
-                else
-                {
-                    return $"{Filter.Name} ({CountAll})";
-                }
-           
+            if (FilterLabel != null)
+            {
+                return FilterLabel(this);
+            }
+            else
+            {
+                return $"{Filter.Name} ({CountAll})";
+            }
+
         }
 
         //public void SetLabel()

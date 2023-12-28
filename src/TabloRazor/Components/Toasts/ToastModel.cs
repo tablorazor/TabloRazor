@@ -1,17 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
-   public class ToastModel
+    public class ToastModel
     {
 
         public ToastModel()
-        {}
+        { }
 
         public ToastModel(string title, string subTitle, string message, ToastOptions options = null)
         {

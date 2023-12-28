@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class AvatarList : TablerBaseComponent
     {
@@ -8,6 +6,6 @@ namespace TabloRazor
         protected override string ClassNames => ClassBuilder
             .Add("avatar-list")
             .AddIf("avatar-list-stacked", Stacked)
-           .ToString(); 
+           .ToString();
     }
 }

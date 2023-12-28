@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 
 namespace TabloRazor
@@ -12,7 +6,7 @@ namespace TabloRazor
     {
         [Inject] private IJSRuntime jSRuntime { get; set; }
         [Parameter] public string Tag { get; set; } = "div";
-         [Parameter] public EventCallback<ResizeObserverEntry> OnResized { get; set; }
+        [Parameter] public EventCallback<ResizeObserverEntry> OnResized { get; set; }
         [Parameter] public EventCallback<ResizeObserverEntry> OnWidthResized { get; set; }
         [Parameter] public EventCallback<ResizeObserverEntry> OnHeightResized { get; set; }
 
@@ -41,7 +35,7 @@ namespace TabloRazor
             {
                 await OnWidthResized.InvokeAsync(resizeObserverEntry);
             }
-           
+
             if (currentEntry?.ContentRect?.Height != resizeObserverEntry?.ContentRect?.Height)
             {
                 await OnHeightResized.InvokeAsync(resizeObserverEntry);

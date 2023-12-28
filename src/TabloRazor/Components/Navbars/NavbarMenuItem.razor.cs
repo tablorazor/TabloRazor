@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Routing;
-using System;
+﻿using Microsoft.AspNetCore.Components.Routing;
 
 namespace TabloRazor
 {
@@ -22,7 +20,7 @@ namespace TabloRazor
 
         protected string HtmlTag => "li";
         protected bool isExpanded;
-      
+
         protected bool IsDropdown => SubMenu != null && Expandable;
 
         protected bool isSubMenu => ParentMenuItem != null;
@@ -87,7 +85,7 @@ namespace TabloRazor
         public void Dispose()
         {
             Navbar?.RemoveNavbarMenuItem(this);
-           
+
             if (NavigationManager != null)
             {
                 NavigationManager.LocationChanged -= LocationChanged;

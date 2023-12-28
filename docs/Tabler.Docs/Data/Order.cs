@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tabler.Docs.Data
 {
@@ -36,7 +33,8 @@ namespace Tabler.Docs.Data
         public DateTimeOffset? LastOrderDate { get; set; }
 
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return $"{CustomerId} [{CustomerName}]";
         }
     }

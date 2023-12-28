@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Tabler.Docs.Components.Modals;
-using TabloRazor;
 
 namespace TabloRazor.Tests
 {

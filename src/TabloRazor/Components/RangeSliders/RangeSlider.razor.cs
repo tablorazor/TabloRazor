@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class RangeSlider<TValue> : ComponentBase
     {

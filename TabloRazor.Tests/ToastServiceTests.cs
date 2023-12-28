@@ -1,8 +1,8 @@
+using NUnit.Framework;
 using System.Linq;
 using System.Threading;
-using NUnit.Framework;
-using TabloRazor.Services;
 using Tabler.Docs.Components.Modals;
+using TabloRazor.Services;
 
 namespace TabloRazor.Tests
 {

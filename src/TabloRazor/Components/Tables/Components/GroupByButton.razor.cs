@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Threading.Tasks;
-
-
-namespace TabloRazor.Components.Tables.Components
+﻿namespace TabloRazor.Components.Tables.Components
 {
     public partial class GroupByButtonBase<Item> : ComponentBase
     {

@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using TabloRazor.Services;
+﻿using TabloRazor.Services;
 
 namespace TabloRazor
 {
@@ -20,7 +18,7 @@ namespace TabloRazor
 
         public void Dispose()
         {
-           ToastService.OnChanged -= OnToastChanged;
+            ToastService.OnChanged -= OnToastChanged;
         }
     }
 }

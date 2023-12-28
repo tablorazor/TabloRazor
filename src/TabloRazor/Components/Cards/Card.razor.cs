@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public enum CardSize
     {
@@ -22,7 +20,7 @@ namespace TabloRazor
         [Parameter] public bool Stacked { get; set; }
         [Parameter] public TablerColor StatusTop { get; set; } = TablerColor.Default;
         [Parameter] public TablerColor StatusStart { get; set; } = TablerColor.Default;
-      
+
         [Parameter] public string LinkTo { get; set; }
 
         protected string HtmlTag => string.IsNullOrWhiteSpace(LinkTo)

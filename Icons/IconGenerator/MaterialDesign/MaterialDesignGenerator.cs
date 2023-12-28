@@ -1,18 +1,14 @@
 ﻿
+using Polly;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using TabloRazor;
 using Tabler.Docs.Icons;
-using System.Linq.Expressions;
-using Polly;
-using System.IO;
+using TabloRazor;
 
 namespace IconGenerator.MaterialDesign
 {
@@ -33,7 +29,7 @@ namespace IconGenerator.MaterialDesign
                 .WaitAndRetry(retryCount: 3, sleepDurationProvider: _ => TimeSpan.FromSeconds(1));
 
 
-            Parallel.ForEach(iconsMeta,  iconMeta =>
+            Parallel.ForEach(iconsMeta, iconMeta =>
             {
                 var handler = new HttpClientHandler();
                 handler.ClientCertificateOptions = ClientCertificateOption.Manual;
@@ -44,7 +40,7 @@ namespace IconGenerator.MaterialDesign
                     };
 
                 var client2 = new HttpClient(handler);
-                
+
                 try
                 {
                     retryPolicy.Execute(() =>
@@ -71,7 +67,7 @@ namespace IconGenerator.MaterialDesign
                     failed.Add(iconUrl);
                 }
             });
-            
+
             Utilities.GenerateIconsFile("MaterialDesignIcons", icons);
 
             return icons;

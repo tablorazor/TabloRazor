@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Tabler.Docs.Services;
 
@@ -30,7 +28,7 @@ namespace Tabler.Docs.Components
             if (!string.IsNullOrWhiteSpace(ClassName) && string.IsNullOrEmpty(Code))
             {
                 var formatter = new HtmlClassFormatter();
-            
+
                 var html = await CodeSnippetService.GetCodeSnippet(ClassName);
                 var cSharp = "";
 
@@ -52,14 +50,14 @@ namespace Tabler.Docs.Components
                 code = HighlightRazor(code);
 
                 Code = code;
-                
+
             }
         }
 
         private string HighlightRazor(string code)
         {
             var keywords = new List<string> { "@code", "@inject" };
-           
+
             var result = code;
             foreach (var keyword in keywords)
             {
@@ -68,7 +66,7 @@ namespace Tabler.Docs.Components
                 result = result.Replace(keyword, $@"<span class=""razor"">{keyword}</span>");
             }
 
-         
+
             return result;
 
         }

@@ -78,7 +78,7 @@ namespace TabloRazor.Dashboards
 
         private void WriteDebug(string text, Stopwatch sw)
         {
-            if(Debug)
+            if (Debug)
             {
                 Console.WriteLine($"{text}: {sw.ElapsedMilliseconds}");
             }

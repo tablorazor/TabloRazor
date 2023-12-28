@@ -5,7 +5,7 @@ namespace TabloRazor.Dashboards
     public partial class GroupFacet<TItem> : BaseFacet<TItem> where TItem : class
     {
         [Parameter] public Expression<Func<TItem, decimal>> Expression { get; set; }
-     
+
 
         [Parameter] public int NumberOfGroups { get; set; } = 5;
 

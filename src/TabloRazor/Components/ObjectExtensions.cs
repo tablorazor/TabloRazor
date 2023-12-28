@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using System.ArrayExtensions;
+﻿using System.ArrayExtensions;
+using System.Reflection;
 
 namespace System
 {

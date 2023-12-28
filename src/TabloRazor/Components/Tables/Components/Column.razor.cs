@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
-using TabloRazor.Components.Tables.Components;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LinqKit;
 using TabloRazor.Components.Tables;
-using LinqKit;
+using TabloRazor.Components.Tables.Components;
 
 namespace TabloRazor
 {
@@ -22,7 +18,7 @@ namespace TabloRazor
         }
         public string PropertyName
         {
-            get { return  Property.GetPropertyMemberInfo()?.Name; }
+            get { return Property.GetPropertyMemberInfo()?.Name; }
         }
         [CascadingParameter(Name = "Table")] public ITable<Item> Table { get; set; }
         [Parameter] public string Width { get; set; }
@@ -38,9 +34,9 @@ namespace TabloRazor
         [Parameter] public Expression<Func<Item, object>> Property { get; set; }
         [Parameter] public Expression<Func<Item, string, bool>> SearchExpression { get; set; }
         [Parameter] public SortOrder? Sort { get; set; }
-        [Parameter]public Align Align { get; set; }
+        [Parameter] public Align Align { get; set; }
         [Parameter] public bool Group { get; set; }
-        
+
         public bool SortColumn { get; set; }
         public bool GroupBy { get; set; }
         public bool SortDescending { get; set; }
@@ -142,11 +138,11 @@ namespace TabloRazor
                     {
                         sortOnColumn = false;
                     }
-                        SortDescending = !SortDescending;
+                    SortDescending = !SortDescending;
                 }
 
                 Table.Columns.ForEach(x => x.SortColumn = false);
-                
+
                 SortColumn = sortOnColumn;
                 await Table.Update();
             }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Linq;
 using System.Xml.Linq;
 
 namespace IconGenerator
 {
     public static class Extensions
     {
-       
+
         public static void RemoveAllNamespaces(this XElement element)
         {
             element.Name = element.Name.LocalName;
@@ -48,8 +44,8 @@ namespace IconGenerator
             {
                 return char.ToUpper(text[0]).ToString();
             }
-                    
-               return char.ToUpper(text[0]) + text.Substring(1);
+
+            return char.ToUpper(text[0]) + text.Substring(1);
         }
 
     }

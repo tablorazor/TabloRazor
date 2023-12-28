@@ -14,7 +14,7 @@ namespace TabloRazor.Dashboards
         private decimal max;
 
         [Parameter] public RenderFragment<DataFacet<TItem>> Facet { get; set; }
-     
+
         private DataFilter<TItem> filter;
 
         protected override void OnInitialized()
@@ -24,7 +24,7 @@ namespace TabloRazor.Dashboards
 
             min = allMin;
             max = allMax;
-     
+
         }
 
         private void RemoveFilter()
@@ -40,11 +40,11 @@ namespace TabloRazor.Dashboards
         {
             if (decimal.TryParse(e.Value.ToString(), out var inputValue))
             {
-                if (inputValue < allMin) {  inputValue = allMin; }
+                if (inputValue < allMin) { inputValue = allMin; }
 
                 min = inputValue;
                 FilterData();
-          
+
             }
         }
 
@@ -52,13 +52,13 @@ namespace TabloRazor.Dashboards
         {
             if (decimal.TryParse(e.Value.ToString(), out var inputValue))
             {
-                if (inputValue > allMax) {  inputValue= allMax; }
+                if (inputValue > allMax) { inputValue = allMax; }
 
                 max = inputValue;
                 FilterData();
             }
         }
-             
+
 
 
         private void FilterData()

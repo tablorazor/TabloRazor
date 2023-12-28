@@ -1,9 +1,9 @@
-﻿using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using TabloRazor.Components.QuickTables;
 using Tabler.Docs.Data;
+using TabloRazor.Components.QuickTables;
 
 public class LocalDataService : IDataService
 {
@@ -17,10 +17,10 @@ public class LocalDataService : IDataService
     public IQueryable<Country> Countries => _dbContext.Countries;
 
     public async Task<GridItemsProviderResult<Country>> GetCountriesAsync(
-        int startIndex, 
-        int? count, 
+        int startIndex,
+        int? count,
         string sortBy,
-        bool sortAscending, 
+        bool sortAscending,
         CancellationToken cancellationToken)
     {
         var ordered = (sortBy, sortAscending) switch

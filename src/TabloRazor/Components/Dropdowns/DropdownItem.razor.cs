@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Components.Web;
 
 namespace TabloRazor
 {
@@ -27,7 +23,7 @@ namespace TabloRazor
                 ParentMenu?.AddSubMenuItem(this);
             }
         }
-     
+
         private void ItemClicked(MouseEventArgs e)
         {
             if (hasSubMenu)
@@ -71,7 +67,7 @@ namespace TabloRazor
         {
             if (hasSubMenu)
             {
-                if(Dropdown.SubMenusDirection == DropdownDirection.Down)
+                if (Dropdown.SubMenusDirection == DropdownDirection.Down)
                 {
                     return "dropdown";
                 }
@@ -79,7 +75,7 @@ namespace TabloRazor
                 {
                     return "dropend";
                 }
-                
+
             }
             return "";
         }

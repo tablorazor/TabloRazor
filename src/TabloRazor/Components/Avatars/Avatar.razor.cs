@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public enum AvatarSize
     {
@@ -29,7 +26,7 @@ namespace TabloRazor
         [Parameter] public AvatarRounded Rounded { get; set; } = AvatarRounded.Default;
 
         protected string Style => string.IsNullOrWhiteSpace(Data) ? string.Empty : $"{GetUnmatchedParameter("style")} background-image:url('{Data}')";
-        
+
         protected override string ClassNames => ClassBuilder
             .Add("avatar")
             .Add(BackgroundColor.GetColorClass("bg", suffix: "lt"))

@@ -1,17 +1,15 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
+using Tabler.Docs.Components.TypeBrowsers;
 using TabloRazor;
 using TabloRazor.Services;
-using Tabler.Docs.Components.TypeBrowsers;
+
 
 namespace Tabler.Docs.Components
 {
-   public partial class DocsExample : ComponentBase
+    public partial class DocsExample : ComponentBase
     {
         [Inject] public TablerService TablerService { get; set; }
         [Inject] private IModalService modalService { get; set; }

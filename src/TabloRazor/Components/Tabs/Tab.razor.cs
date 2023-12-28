@@ -2,7 +2,7 @@
 
 namespace TabloRazor
 {
-   public partial class Tab : TablerBaseComponent, ITab
+    public partial class Tab : TablerBaseComponent, ITab
     {
         [CascadingParameter] Tabs ContainerTabSet { get; set; }
         [Parameter] public string Title { get; set; }

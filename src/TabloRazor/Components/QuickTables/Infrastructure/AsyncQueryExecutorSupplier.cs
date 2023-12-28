@@ -1,5 +1,5 @@
-using System.Collections.Concurrent;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Concurrent;
 
 namespace TabloRazor.Components.QuickTables.Infrastructure;
 

@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TabloRazor.Components.Tables;
+﻿using Microsoft.AspNetCore.Components.Web;
 using TabloRazor.Services;
 
 namespace TabloRazor.Components.Tables

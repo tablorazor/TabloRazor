@@ -1,12 +1,10 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace TabloRazor
 {
     public partial class NavigationItem : NavigationBase
     {
 
         [Parameter] public string Title { get; set; }
-     
+
         [Parameter] public RenderFragment MenuIcon { get; set; }
         [Parameter] public RenderFragment SubMenu { get; set; }
 
@@ -28,7 +26,7 @@ namespace TabloRazor
             .AddIf("active", Disabled)
             .ToString();
 
-      
+
         private void MouseEnter()
         {
             IsExpanded = true;
@@ -44,7 +42,8 @@ namespace TabloRazor
         {
             bool isActive;
 
-            if (!ExpandClick) {
+            if (!ExpandClick)
+            {
                 isActive = true;
                 CollapseAll();
             }

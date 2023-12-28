@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.Forms;
 using TabloRazor.Services;
 
 namespace TabloRazor.Components.ObjectBrowser
@@ -18,12 +11,12 @@ namespace TabloRazor.Components.ObjectBrowser
 
         private async Task ObjectDetails()
         {
-            if(PropertyValue != null)
+            if (PropertyValue != null)
             {
                 var component = new RenderComponent<TabloRazor.ObjectBrowser>().Set(e => e.Object, PropertyValue);
                 var result = await ModalService.ShowAsync(PropertyValue.GetType().FullName, component, new ModalOptions { Size = ModalSize.XLarge });
             }
-        
+
         }
 
     }

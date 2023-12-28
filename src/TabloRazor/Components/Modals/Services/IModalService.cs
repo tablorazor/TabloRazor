@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TabloRazor.Components.Modals;
+﻿using TabloRazor.Components.Modals;
 
 namespace TabloRazor.Services
 {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TabloRazor.Dashboards.Extensions;
+﻿using TabloRazor.Dashboards.Extensions;
 namespace TabloRazor.Dashboards
 {
     public static class DateRangeGenerator
@@ -70,13 +65,13 @@ namespace TabloRazor.Dashboards
 
     }
 
-   
+
 
 
     public class DateRange
     {
         public DateRange()
-        {}
+        { }
 
         public DateRange(string name, DateTime start, DateTime end)
         {

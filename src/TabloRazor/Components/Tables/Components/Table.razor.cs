@@ -1,13 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Options;
-using TabloRazor.Components.Tables.Components;
 using TabloRazor.Components.Tables;
+using TabloRazor.Components.Tables.Components;
 using TabloRazor.Services;
 
 namespace TabloRazor
@@ -93,7 +88,7 @@ namespace TabloRazor
         private bool wasInit = false;
         protected async override Task OnParametersSetAsync()
         {
-            if (typeof(TheGridDataFactory<Item>) == DataProvider?.GetType()|| !wasInit)
+            if (typeof(TheGridDataFactory<Item>) == DataProvider?.GetType() || !wasInit)
             {
                 wasInit = true;
                 await Update();
@@ -462,5 +457,6 @@ namespace TabloRazor
             int width = 16; //(AllRowActions.Count * 25) + 16;
             return Math.Max(width, 80) + "px";
         }
+
     }
 }

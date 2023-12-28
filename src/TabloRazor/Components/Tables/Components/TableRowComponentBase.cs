@@ -1,7 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor.Components.Tables
+﻿namespace TabloRazor.Components.Tables
 {
     public abstract class TableRowComponentBase<TableItem> : ComponentBase
     {
@@ -14,7 +11,6 @@ namespace TabloRazor.Components.Tables
         {
             return new ClassBuilder()
                 .Add(column.CssClass)
-                .AddIf("text-end", column.Align == Align.End)
                 .ToString();
         }
     }

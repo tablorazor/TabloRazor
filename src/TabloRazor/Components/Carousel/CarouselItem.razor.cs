@@ -1,5 +1,3 @@
-using System.Xml.Serialization;
-
 namespace TabloRazor
 {
     public partial class CarouselItem : IDisposable

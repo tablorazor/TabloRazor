@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using System;
-using System.Runtime.CompilerServices;
-using TabloRazor;
 using Tabler.Docs.Services;
+using
+TabloRazor;
 using TabloRazor.Services;
 
 namespace Tabler.Docs.Components.General
@@ -36,7 +34,7 @@ namespace Tabler.Docs.Components.General
             await tablerService.SetTheme(value);
 
         }
-     
+
 
     }
 }

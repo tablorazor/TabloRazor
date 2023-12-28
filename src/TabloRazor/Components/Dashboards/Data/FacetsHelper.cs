@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Linq;
-using TabloRazor.Dashboards.Extensions;
-
-namespace TabloRazor.Dashboards
+﻿namespace TabloRazor.Dashboards
 {
     internal static class FacetsHelper
     {
@@ -107,7 +102,7 @@ namespace TabloRazor.Dashboards
                 var filter = new FacetFilter<TItem>
                 {
                     Items = groupItems,
-                    CountAll = groupItems.Count,  
+                    CountAll = groupItems.Count,
                     Filter = new DataFilter<TItem>
                     {
                         Name = $"{groupMin.ToString($"n{numberOfDecimals}")} => {groupMax.ToString($"n{numberOfDecimals}")}",
