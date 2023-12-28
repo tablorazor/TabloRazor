@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Linq;
-using TabloRazor.Components.Tables;
-
-namespace TabloRazor.Components.Tables
+﻿namespace TabloRazor.Components.Tables
 {
     public class TableHeaderBase<TableItem> : TableRowComponentBase<TableItem>
     {
@@ -12,8 +8,9 @@ namespace TabloRazor.Components.Tables
         {
             return new ClassBuilder()
                 .AddIf("cursor-pointer", column.Sortable)
+                .AddIf("text-end", column.Align == Align.End)
                 .ToString();
-         }
+        }
 
 
         protected string GetSortIconClass(IColumn<TableItem> column)
@@ -56,5 +53,5 @@ namespace TabloRazor.Components.Tables
 
     }
 
-   
+
 }

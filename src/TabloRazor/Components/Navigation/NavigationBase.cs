@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public abstract class NavigationBase : TablerBaseComponent, IDisposable
     {
@@ -20,7 +14,7 @@ namespace TabloRazor
 
         internal bool ExpandClick;
 
-        public bool Disabled { get; set; }  
+        public bool Disabled { get; set; }
 
 
         protected override void OnInitialized()
@@ -53,15 +47,17 @@ namespace TabloRazor
             IsExpanded = expanded;
         }
 
-        public void CollapseAll() { 
-        
+        public void CollapseAll()
+        {
+
             if (Parent != null)
             {
                 Parent.CollapseAll();
             }
             else
             {
-                foreach (var child in Children) {
+                foreach (var child in Children)
+                {
 
                     child.SetExpanded(false);
                 }
@@ -78,7 +74,7 @@ namespace TabloRazor
             {
                 if (active)
                 {
-                   foreach (var child in Parent.Children)
+                    foreach (var child in Parent.Children)
                     {
                         if (child != this)
                         {

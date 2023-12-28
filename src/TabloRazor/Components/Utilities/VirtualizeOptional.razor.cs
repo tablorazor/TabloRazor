@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class VirtualizeOptional<TItem>
     {

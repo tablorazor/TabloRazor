@@ -16,7 +16,7 @@ namespace TabloRazor.Dashboards
 
         protected override async Task OnInitializedAsync()
         {
-           // await SetFilterLabels();
+            // await SetFilterLabels();
 
             await base.OnInitializedAsync();
         }
@@ -44,7 +44,7 @@ namespace TabloRazor.Dashboards
 
         public IIconType GetExpandedIcon()
         {
-            if(IsExpanded == true) { return InternalIcons.Chevron_up; }
+            if (IsExpanded == true) { return InternalIcons.Chevron_up; }
             return InternalIcons.Chevron_down;
         }
 

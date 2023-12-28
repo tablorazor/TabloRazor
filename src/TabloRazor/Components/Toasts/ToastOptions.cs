@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
-   public class ToastOptions
+    public class ToastOptions
     {
         /// <summary>
         /// Delay in Seconds

@@ -5,7 +5,7 @@ namespace TabloRazor.Table.WebApiDataProvider
 {
     public static class UriBuilder
     {
-        public static async Task<string> ToQueryString(this object obj) 
+        public static async Task<string> ToQueryString(this object obj)
         {
             var keyValueContenct = ToKeyValue(obj);
             var formUrlEncodedContent = new FormUrlEncodedContent(keyValueContenct);
@@ -14,23 +14,23 @@ namespace TabloRazor.Table.WebApiDataProvider
 
         private static IEnumerable<KeyValuePair<string, string>> ToKeyValue(object metaToken)
         {
-            if(metaToken == null)
+            if (metaToken == null)
             {
                 return null;
             }
             JToken token = metaToken as JToken;
 
-            if(token == null)
+            if (token == null)
             {
                 return ToKeyValue(JObject.FromObject(metaToken));
             }
             if (token.HasValues)
             {
                 var contentData = new Dictionary<string, string>();
-                foreach(var child in token.Children().ToList())
+                foreach (var child in token.Children().ToList())
                 {
                     var childContent = ToKeyValue(child);
-                    if(childContent != null)
+                    if (childContent != null)
                     {
                         contentData = contentData.Concat(childContent).ToDictionary(k => k.Key, v => v.Value);
                     }
@@ -38,7 +38,7 @@ namespace TabloRazor.Table.WebApiDataProvider
                 return contentData;
             }
             var jValue = token as JValue;
-            if(jValue?.Value != null)
+            if (jValue?.Value != null)
             {
                 return null;
             }
@@ -46,7 +46,7 @@ namespace TabloRazor.Table.WebApiDataProvider
                 jValue?.ToString("o", CultureInfo.InvariantCulture) :
                 jValue?.ToString(CultureInfo.InvariantCulture);
 
-            return new Dictionary<string, string> { { token.Path,value } };
+            return new Dictionary<string, string> { { token.Path, value } };
         }
     }
 }

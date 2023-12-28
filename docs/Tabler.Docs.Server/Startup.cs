@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using TabloRazor.QuickTable.EntityFramework;
 using Tabler.Docs.Services;
+using TabloRazor.QuickTable.EntityFramework;
 
 
 namespace Tabler.Docs.Server
@@ -28,18 +28,18 @@ namespace Tabler.Docs.Server
             services.AddQuickTableEntityFrameworkAdapter();
             services.AddRazorPages();
             services.AddServerSideBlazor();
-           
+
             services.AddScoped<ICodeSnippetService, LocalSnippetService>();
             services.AddDocs();
-                
-            
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             SeedData.EnsureSeeded(app.ApplicationServices);
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

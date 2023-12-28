@@ -10,11 +10,11 @@ public class AccordionItem : TablerBaseComponent, IDisposable
     [Parameter] public bool Expanded { get; set; }
     public bool IsExpanded { get; set; }
 
-   
+
 
     protected override void OnInitialized()
     {
-        IsExpanded = Expanded;    
+        IsExpanded = Expanded;
         Accordion?.AddAccordionItem(this);
     }
 

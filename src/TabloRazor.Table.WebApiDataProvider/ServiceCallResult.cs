@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TabloRazor.Table.WebApiDataProvider
+﻿namespace TabloRazor.Table.WebApiDataProvider
 {
     public class ServiceCallResult<T>
     {

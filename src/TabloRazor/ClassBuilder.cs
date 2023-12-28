@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public class ClassBuilder
     {
@@ -18,7 +14,7 @@ namespace TabloRazor
             if (!string.IsNullOrWhiteSpace(className))
             {
                 var classNames = className
-                    .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                     .Distinct()
                     .ToList();
 

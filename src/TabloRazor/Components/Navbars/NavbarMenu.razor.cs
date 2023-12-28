@@ -1,7 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class NavbarMenu : TablerBaseComponent
     {
@@ -18,7 +15,7 @@ namespace TabloRazor
 
         public void ToogleExpanded()
         {
-           
+
             Navbar.ToogleExpand();
         }
 

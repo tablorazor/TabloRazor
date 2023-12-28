@@ -12,7 +12,7 @@
 
     public class TablerFlag : IFlagType
     {
-        
+
         public TablerFlag(string elements, int width, int height, Country country = null)
         {
             Elements = elements;
@@ -25,7 +25,7 @@
 
         public int Height { get; set; }
 
-        public string Elements { get;  }
+        public string Elements { get; }
         public string Viewbox { get; }
 
         public string ClassName => "TablerFlag";

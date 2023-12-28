@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
 
     public partial class Status : TablerBaseComponent
@@ -13,11 +11,11 @@ namespace TabloRazor
         protected override string ClassNames => ClassBuilder
             .Add("status")
             .Add(BackgroundColor.GetColorClass("status", ColorType.Default))
-            .AddIf(TextColor.GetColorClass("text", ColorType.Default), TextColor!=TablerColor.Default)
+            .AddIf(TextColor.GetColorClass("text", ColorType.Default), TextColor != TablerColor.Default)
             .AddIf("status-lite", Lite)
             .AddIf("cursor-pointer", OnClick.HasDelegate)
 
-             
+
 
 
 

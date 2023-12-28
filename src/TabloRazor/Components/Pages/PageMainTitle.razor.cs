@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using TabloRazor;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class PageMainTitle : TablerBaseComponent
     {

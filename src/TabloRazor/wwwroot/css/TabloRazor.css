@@ -1,4 +1,4 @@
-﻿.nav-bordered .nav-item {
+.nav-bordered .nav-item {
   margin-left: 1rem !important;
 }
 
@@ -12,14 +12,17 @@
   outline: none;
   transition: transform 0.15s linear;
 }
+
 .tabicon:focus {
   outline: none;
   box-shadow: 0 0 0 0.25rem #b9cce2;
   border-radius: 2px;
 }
+
 .tabicon:hover {
   transform: scale(1.15);
 }
+
 .tabicon::-moz-focus-inner {
   border: 0;
 }
@@ -101,6 +104,7 @@
   width: unset;
   height: unset;
 }
+
 .switch-icon svg {
   width: unset;
   height: unset;
@@ -159,6 +163,7 @@ Dimmer
   text-align: left !important;
   font-weight: bold;
 }
+
 .grouped-table tr td {
   padding-left: 0.5rem;
 }
@@ -167,10 +172,12 @@ Dimmer
   transition: opacity 0.3s ease-in;
   opacity: 1;
 }
+
 .tabler-table tr:focus-within {
   --tblr-table-accent-bg: var(--tblr-table-active-bg);
   color: var(--tblr-table-active-color);
 }
+
 .tabler-table .row-action {
   display: flex;
   flex-direction: row;
@@ -178,6 +185,7 @@ Dimmer
   text-align: right;
   opacity: 0;
 }
+
 .tabler-table .row-action button {
   background-color: unset;
   border: none;
@@ -186,9 +194,11 @@ Dimmer
   padding-left: 0;
   padding-right: 0;
 }
+
 .tabler-table .row-action-edit {
   text-align: right;
 }
+
 .tabler-table .sorting {
   opacity: 0.3;
 }
@@ -258,3 +268,13 @@ Dimmer
   width: 10px !important;
   height: 10px !important;
 }
+
+.switch-icon-flip .switch-icon-a {
+  opacity: 0;
+}
+
+.switch-icon-flip.active .switch-icon-b {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=TabloRazor.css.map */

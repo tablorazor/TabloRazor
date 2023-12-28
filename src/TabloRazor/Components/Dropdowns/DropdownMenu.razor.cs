@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class DropdownMenu : TablerBaseComponent, IDisposable
     {

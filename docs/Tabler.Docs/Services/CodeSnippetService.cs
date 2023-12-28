@@ -46,7 +46,7 @@ namespace Tabler.Docs.Services
         const string repo = "tablorazor/tablorazor";
         //const string baseUrl = "https://raw.githubusercontent.com/tablorazor/TabloRazor/master/docs/Tabler.Docs";
         const string baseUrl = "https://TabloRazor.com/_content/razor_source";
-     
+
         private readonly IHttpClientFactory httpClientFactory;
 
         private Dictionary<string, string> cachedCode = new Dictionary<string, string>();
@@ -75,7 +75,7 @@ namespace Tabler.Docs.Services
                     {
                         cachedCode[className] = code;
                     }
-                 
+
                 }
 
                 return cachedCode[className];

@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components.Web;
 
 namespace TabloRazor
 {
@@ -14,7 +8,7 @@ namespace TabloRazor
         [Parameter] public EventCallback<bool> ActiveChanged { get; set; }
         [Parameter] public RenderFragment DefaultTemplate { get; set; }
         [Parameter] public RenderFragment ActiveTemplate { get; set; }
-        
+
         [Parameter] public SwitchAnimation Animation { get; set; }
 
         bool isActive;

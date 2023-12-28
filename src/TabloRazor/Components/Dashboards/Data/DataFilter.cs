@@ -7,13 +7,13 @@
         public Expression<Func<TItem, bool>> Expression { get; set; }
 
         public Func<TItem, bool> Predicate
-        { 
+        {
             get
             {
                 predicate ??= Expression.Compile();
                 return predicate;
             }
-        
+
         }
 
     }

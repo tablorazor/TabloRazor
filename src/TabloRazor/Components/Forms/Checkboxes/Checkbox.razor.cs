@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Threading.Tasks;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class Checkbox : ComponentBase
     {

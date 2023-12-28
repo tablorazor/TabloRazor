@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components.Web;
 using TabloRazor.Services;
 
 namespace TabloRazor
@@ -101,7 +98,7 @@ namespace TabloRazor
             .AddIf(Options.ModalCssClass, Options.ModalCssClass != null)
             .AddIf("modal-blur", Options.BlurBackground)
             .ToString();
-        
+
         protected string GetModalCss() => new ClassBuilder()
                 .Add("modal-dialog")
                 .AddIf("modal-sm", Options.Size == ModalSize.Small)

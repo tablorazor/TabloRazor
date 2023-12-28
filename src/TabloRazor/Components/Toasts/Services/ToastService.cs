@@ -1,11 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace TabloRazor.Services
+﻿namespace TabloRazor.Services
 {
     public class ToastService
     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
+﻿using System.Timers;
 using Timer = System.Timers.Timer;
 
 namespace TabloRazor.Components.Toasts
@@ -14,13 +9,13 @@ namespace TabloRazor.Components.Toasts
         private int _percentComplete;
 
         internal Action<int> OnTick;
-        
+
 
         internal CountdownTimer(int timeout)
         {
             _timer = new Timer(timeout)
             {
-                Interval = (timeout  / 100),
+                Interval = (timeout / 100),
                 AutoReset = true
             };
 

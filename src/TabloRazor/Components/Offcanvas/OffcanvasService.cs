@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using TabloRazor.Components.Offcanvas;
+﻿using TabloRazor.Components.Offcanvas;
 
 namespace TabloRazor
 {

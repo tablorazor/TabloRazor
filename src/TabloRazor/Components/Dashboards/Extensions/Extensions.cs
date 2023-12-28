@@ -19,7 +19,7 @@ namespace TabloRazor.Dashboards.Extensions
         public static DateTime StartOfWeek(this DateTime date, DayOfWeek day)
         {
             do { date = date.AddDays(-1).StartOfDay(); }
-            while (date.DayOfWeek != day); 
+            while (date.DayOfWeek != day);
             return date;
         }
 
@@ -45,6 +45,6 @@ namespace TabloRazor.Dashboards.Extensions
             return date.StartOfDay().AddDays(1).AddTicks(-1);
         }
 
-        
+
     }
 }

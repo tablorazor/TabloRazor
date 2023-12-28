@@ -13,7 +13,7 @@ public partial class Paginator : IDisposable
             new EventCallbackSubscriber<PaginationState>(new EventCallback<PaginationState>(this, null));
     }
 
-    [Parameter] [EditorRequired] public PaginationState Value { get; set; } = default!;
+    [Parameter][EditorRequired] public PaginationState Value { get; set; } = default!;
 
     [Parameter] public RenderFragment SummaryTemplate { get; set; }
 

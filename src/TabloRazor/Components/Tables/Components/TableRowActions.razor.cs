@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Threading.Tasks;
-using TabloRazor.Components.Tables;
-
-namespace TabloRazor.Components.Tables
+﻿namespace TabloRazor.Components.Tables
 {
     public class TableRowActionsBase<TableItem> : TableRowComponentBase<TableItem>
     {
         [Parameter] public ITableRowActions<TableItem> Table { get; set; }
         [Parameter] public TableItem Item { get; set; }
 
-       
+
         protected bool CanDeleteItem(TableItem item)
         {
             if (!Table.AllowDelete)

@@ -1,9 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Timers;
 using Timer = System.Timers.Timer;
 
 namespace TabloRazor;
@@ -42,7 +36,7 @@ public partial class Typeahead<TItem, TValue> : TablerBaseComponent
             Interval = Debounce,
             AutoReset = false
         };
-        debounceTimer.Elapsed += async (_, _) =>  await Search();
+        debounceTimer.Elapsed += async (_, _) => await Search();
 
         if (ConvertExpression == null)
         {

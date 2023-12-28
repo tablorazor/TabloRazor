@@ -6,7 +6,7 @@ public class PropertyColumn<TGridItem, TProp> : ColumnBase<TGridItem>, ISortBuil
     private Expression<Func<TGridItem, TProp>> _lastAssignedProperty;
     private GridSort<TGridItem> _sortBuilder;
 
-    [Parameter] [EditorRequired] public Expression<Func<TGridItem, TProp>> Property { get; set; } = default!;
+    [Parameter][EditorRequired] public Expression<Func<TGridItem, TProp>> Property { get; set; } = default!;
     [Parameter] public string Format { get; set; }
 
     GridSort<TGridItem> ISortBuilderColumn<TGridItem>.SortBuilder => _sortBuilder;

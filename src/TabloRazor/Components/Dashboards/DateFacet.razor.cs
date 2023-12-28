@@ -5,7 +5,7 @@ namespace TabloRazor.Dashboards
     public partial class DateFacet<TItem> : BaseFacet<TItem> where TItem : class
     {
         [Parameter] public Expression<Func<TItem, DateTime>> Expression { get; set; }
-        
+
 
         protected override void OnInitialized()
         {
@@ -15,16 +15,16 @@ namespace TabloRazor.Dashboards
 
         private void ValueChanged(FacetFilter<TItem> filter, MouseEventArgs e)
         {
-            if(!filter.Active)
+            if (!filter.Active)
             {
                 ResetFilters(false);
-                filter.Active= true;
+                filter.Active = true;
             }
             else
             {
-                filter.Active= false;
+                filter.Active = false;
             }
-         
+
             Dashboard.RunFilter();
         }
 

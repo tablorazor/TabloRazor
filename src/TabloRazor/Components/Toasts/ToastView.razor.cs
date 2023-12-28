@@ -1,16 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TabloRazor.Services;
+﻿using TabloRazor.Services;
 
 namespace TabloRazor.Components.Toasts
 {
     public partial class ToastView : IDisposable
     {
-        [Inject] ToastService ToastService { get;set;}
+        [Inject] ToastService ToastService { get; set; }
         [Parameter] public ToastModel Toast { get; set; }
 
         private CountdownTimer _countdownTimer;
@@ -23,7 +17,7 @@ namespace TabloRazor.Components.Toasts
                 _countdownTimer = new CountdownTimer(Toast.Options.Delay * 1000);
                 _countdownTimer.OnTick += CalculateProgress;
                 _countdownTimer.Start();
-            } 
+            }
         }
 
         private async void CalculateProgress(int percentComplete)

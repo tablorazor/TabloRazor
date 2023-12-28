@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Tabler.Docs.Components.TypeBrowsers
 {
@@ -15,7 +14,7 @@ namespace Tabler.Docs.Components.TypeBrowsers
             return propertyInfo.GetCustomAttributes().Any(e => e.GetType() == typeof(ParameterAttribute));
         }
 
-     
+
         public static string GetFriendlyName(this Type type)
         {
             string friendlyName = type.Name;
@@ -29,7 +28,7 @@ namespace Tabler.Docs.Components.TypeBrowsers
         private static string GetTypeString(Type type)
         {
             var t = type.Name;
-          
+
             var output = new StringBuilder();
             List<string> typeStrings = new List<string>();
 

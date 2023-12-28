@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor.Components.Tables.Components
+﻿namespace TabloRazor.Components.Tables.Components
 {
     public class DetailsRowBase<TableItem> : ComponentBase // ComponentBase
     {

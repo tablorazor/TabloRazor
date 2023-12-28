@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor
+﻿namespace TabloRazor
 {
     public partial class DataGrid : TablerBaseComponent
     {
-     
+
         protected override string ClassNames => ClassBuilder
             .Add("datagrid")
             .Add(BackgroundColor.GetColorClass("bg"))

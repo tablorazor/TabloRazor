@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TabloRazor.Components.Selects
+﻿namespace TabloRazor.Components.Selects
 {
     public class ListItem<TItem, TValue>
     {

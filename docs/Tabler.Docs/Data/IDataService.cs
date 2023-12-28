@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TabloRazor.Components.QuickTables;
 using Tabler.Docs.Data;
+using TabloRazor.Components.QuickTables;
 
 public interface IDataService
 {

@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components.Forms;
-
 namespace TabloRazor
 {
     public partial class ItemSelect<TItem, TValue> : TablerBaseComponent, IDisposable
@@ -67,7 +61,7 @@ namespace TabloRazor
             {
                 searchInput = value;
                 FocusSearch = true;
-            } 
+            }
         }
 
         [CascadingParameter] private EditContext CascadedEditContext { get; set; }
@@ -122,7 +116,7 @@ namespace TabloRazor
                 SearchInput.FocusAsync();
                 FocusSearch = false;
             }
-            
+
             if (fieldIdentifier is not FieldIdentifier fid) { return; }
             CascadedEditContext?.NotifyFieldChanged(fid);
             CascadedEditContext?.Validate();
@@ -225,7 +219,7 @@ namespace TabloRazor
             {
                 highlighted = default;
             }
-            
+
             return filtered.ToList();
         }
 
@@ -270,7 +264,7 @@ namespace TabloRazor
         private void SetHighlighted(int step)
         {
             var myList = FilteredList();
-            
+
             if (highlighted == null)
             {
                 highlighted = step > Decimal.Zero ? myList.FirstOrDefault() : myList.LastOrDefault();
@@ -393,7 +387,7 @@ namespace TabloRazor
             }
 
             await Changed.InvokeAsync();
-            
+
             if (fieldIdentifier is FieldIdentifier fid)
             {
                 CascadedEditContext?.NotifyFieldChanged(fid);

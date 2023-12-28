@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.VisualBasic;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components.Web;
 
 namespace TabloRazor
 {
@@ -11,7 +8,7 @@ namespace TabloRazor
         [Parameter] public bool CloseOnClick { get; set; } = true;
         [Parameter] public DropdownDirection Direction { get; set; }
         [Parameter] public DropdownDirection SubMenusDirection { get; set; } = DropdownDirection.End;
-        [Parameter] public EventCallback<bool> OnExpanded { get; set;}
+        [Parameter] public EventCallback<bool> OnExpanded { get; set; }
 
 
         public bool IsExpanded => isExpanded;
@@ -50,7 +47,7 @@ namespace TabloRazor
         {
             if (isContextMenu)
             {
-               return $"position:fixed;top:{top}px;left:{left}px";
+                return $"position:fixed;top:{top}px;left:{left}px";
             }
 
             return "";

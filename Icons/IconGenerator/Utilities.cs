@@ -4,10 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Text.Json;
 using System.Xml.Linq;
-using TabloRazor;
 using Tabler.Docs.Icons;
+using TabloRazor;
 
 namespace IconGenerator
 {
@@ -98,7 +97,7 @@ namespace IconGenerator
             foreach (var flag in flags)
             {
 
-                fileOutput.AppendLine("\t\t"+flag.DotNetProperty);
+                fileOutput.AppendLine("\t\t" + flag.DotNetProperty);
             }
 
             fileOutput.AppendLine("\t}");

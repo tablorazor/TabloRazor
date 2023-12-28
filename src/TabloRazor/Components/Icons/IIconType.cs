@@ -3,8 +3,8 @@ namespace TabloRazor
 {
     public interface IIconType
     {
-        public double StrokeWidth { get;  }
-        public bool Filled { get;  }
+        public double StrokeWidth { get; }
+        public bool Filled { get; }
         public string Elements { get; }
         public string ClassName { get; }
         public IconProvider Provider { get; }

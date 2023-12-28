@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Routing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components.Routing;
 using TabloRazor.Components.Modals;
 
 
@@ -30,7 +25,7 @@ namespace TabloRazor.Services
         private readonly NavigationManager navigationManager;
 
         public IEnumerable<ModalModel> Modals { get { return modals; } }
-              
+
         public Task<ModalResult> ShowAsync<TComponent>(string title, RenderComponent<TComponent> component, ModalOptions modalOptions = null) where TComponent : IComponent
         {
             modalModel = new ModalModel(component.Contents, title, modalOptions);
@@ -42,11 +37,11 @@ namespace TabloRazor.Services
         public async Task<bool> ShowDialogAsync(DialogOptions options)
         {
             var component = new RenderComponent<DialogModal>().
-                Set(e=> e.Options, options);
+                Set(e => e.Options, options);
             var result = await ShowAsync("", component, new ModalOptions { Size = ModalSize.Small, ShowHeader = false, StatusColor = options.StatusColor });
             return !result.Cancelled;
         }
-         
+
         private void LocationChanged(object sender, LocationChangedEventArgs e)
         {
             CloseAll();
@@ -67,7 +62,7 @@ namespace TabloRazor.Services
                 ModalModel modalToClose = modals.Pop();
                 modalToClose.TaskSource.SetResult(modalResult);
             }
-            
+
             OnChanged?.Invoke();
         }
 
@@ -114,6 +109,6 @@ namespace TabloRazor.Services
             zIndex -= zIndexIncrement;
             topOffset -= topOffsetIncrement;
         }
-            
+
     }
 }

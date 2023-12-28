@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Threading.Tasks;
-using TabloRazor.Services;
+﻿using TabloRazor.Services;
 
 namespace TabloRazor.Components.Tables
 {

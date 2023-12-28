@@ -1,7 +1,5 @@
-﻿using System.Timers;
-using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.JSInterop;
 using TabloRazor.Services;
 using Timer = System.Timers.Timer;
 
@@ -9,8 +7,8 @@ namespace TabloRazor;
 
 public partial class Autocomplete<TItem> : TablerBaseComponent, IDisposable
 {
-    [Inject]public TablerService TablerService { get; set; }
-    
+    [Inject] public TablerService TablerService { get; set; }
+
     [CascadingParameter] protected EditContext EditContext { get; set; }
 
     private string FieldCssClasses =>
@@ -109,7 +107,7 @@ public partial class Autocomplete<TItem> : TablerBaseComponent, IDisposable
         {
             return;
         }
-        
+
         if (MinimumLength > 0 && Value == null) return;
 
         searchText = GetSearchText(Value) ?? String.Empty;

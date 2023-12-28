@@ -1,7 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor.Components.Tables
+﻿namespace TabloRazor.Components.Tables
 {
     public abstract class TableRowComponentBase<TableItem> : ComponentBase
     {

@@ -1,18 +1,16 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
-using IconGenerator.Converters;
+﻿using IconGenerator.Converters;
 using Nager.Country;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using TabloRazor;
 using Tabler.Docs.Icons;
+using TabloRazor;
 
 namespace IconGenerator.Tabler
 {

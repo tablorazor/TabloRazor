@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-//using Tabler.Components.Table.Components;
-using System;
-using System.Threading.Tasks;
+﻿//using Tabler.Components.Table.Components;
 using TabloRazor.Components.Tables.Components;
 
 namespace TabloRazor.Components.Tables
@@ -10,7 +7,7 @@ namespace TabloRazor.Components.Tables
     {
         ITable<Item> Table { get; set; }
         string Title { get; set; }
-        string PropertyName { get;  }
+        string PropertyName { get; }
         string Width { get; set; }
         string CssClass { get; set; }
         bool Sortable { get; set; }
@@ -19,6 +16,7 @@ namespace TabloRazor.Components.Tables
         bool Visible { get; set; }
         bool SortDescending { get; }
         bool GroupBy { get; set; }
+        Align Align { get; set; }
         Task SortByAsync();
         Task GroupByMeAsync();
         Type Type { get; }

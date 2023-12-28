@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using TabloRazor;
 using TabloRazor.Services;
-using Tabler.Docs.Icons;
+
 
 namespace Tabler.Docs.Components.Flags
 {
@@ -56,16 +55,16 @@ namespace Tabler.Docs.Components.Flags
             }
 
             filteredFlags = query.ToList();
-         
+
         }
 
-       private int GetRowCount()
+        private int GetRowCount()
         {
-                var flagSize = 100;
-                var width = flagContainerRect?.Width ?? 100;
+            var flagSize = 100;
+            var width = flagContainerRect?.Width ?? 100;
             var result = (int)Math.Floor((width / flagSize));
-           return result;
-           
+            return result;
+
         }
 
         private bool IsSelected(GeneratedFlag flagMember) => selectedFlags.Contains(flagMember);
@@ -85,7 +84,7 @@ namespace Tabler.Docs.Components.Flags
 
         private void ClearSelected()
         {
-            selectedFlags.Clear(); 
+            selectedFlags.Clear();
         }
 
         private async Task CopyToClipboard()
@@ -100,5 +99,5 @@ namespace Tabler.Docs.Components.Flags
             await toastService.AddToastAsync(new ToastModel { Title = $"{selectedFlags.Count} icons copied to clipboard", Options = new TabloRazor.ToastOptions { Delay = 2 } });
         }
     }
-    
+
 }

@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using TabloRazor.QuickTable.EntityFramework;
 using Tabler.Docs.Services;
+using TabloRazor.QuickTable.EntityFramework;
 
 namespace Tabler.Docs.Wasm
 {
@@ -22,8 +22,8 @@ namespace Tabler.Docs.Wasm
             builder.Services.AddScoped<IDataService, LocalDataService>();
             builder.Services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlite("Data Source=app.db"));
             builder.Services.AddQuickTableEntityFrameworkAdapter();
-            
-            
+
+
             await builder.Build().RunAsync();
         }
     }

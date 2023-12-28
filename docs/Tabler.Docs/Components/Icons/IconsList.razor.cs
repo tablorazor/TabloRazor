@@ -149,7 +149,7 @@ namespace Tabler.Docs.Components.Icons
 
         public string DotNetProperty => $"public static IIconType {Name} => new {IconType.ClassName}(@\"{IconType?.Elements}\");";
 
-      
+
     }
 
 }

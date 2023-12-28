@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace TabloRazor.Components
+﻿namespace TabloRazor.Components
 {
     public interface ITab
     {

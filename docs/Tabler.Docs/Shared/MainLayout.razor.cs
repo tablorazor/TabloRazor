@@ -8,7 +8,7 @@ namespace Tabler.Docs.Shared
     {
         [Inject] private AppService appService { get; set; }
 
-       
+
         protected override void OnInitialized()
         {
             appService.OnSettingsUpdated += SettingsUpdated;

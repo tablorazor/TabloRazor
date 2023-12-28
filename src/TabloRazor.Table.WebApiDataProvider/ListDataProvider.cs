@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TabloRazor.Components.Tables;
+﻿using TabloRazor.Components.Tables;
 using TabloRazor.Components.Tables.Components;
 using TailoredApps.Shared.Querying;
 
@@ -54,13 +49,13 @@ namespace TabloRazor.Table.WebApiDataProvider
             }
 
             var sortColumn = columns.SingleOrDefault(z => z.SortColumn);
-            if(sortColumn != null)
+            if (sortColumn != null)
             {
                 request.SortField = sortColumn.PropertyName;
                 request.SortDir = sortColumn.SortDescending ? SortDirection.Desc : SortDirection.Asc;
             }
             var queryString = await request.ToQueryString();
-            var call = await httpClient.Get<TResponse>(baseUri + "?"+ queryString,CancellationToken.None);
+            var call = await httpClient.Get<TResponse>(baseUri + "?" + queryString, CancellationToken.None);
             state.TotalCount = call?.Result?.Count ?? 0;
             var results = call?.Result?.Results?.ToList() ?? new List<TResults>();
             List<TableResult<object, TResults>> result = new()
