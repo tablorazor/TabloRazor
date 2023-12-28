@@ -33,14 +33,16 @@
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
 
+
 	<ItemGroup>
-		<ProjectReference Include="..\TabloRazor\TabloRazor.csproj" />
+	  <None Include="..\TabloRazor\TabloRazorLogo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="TabloRazorLogo.png">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
+		<ProjectReference Include="..\TabloRazor\TabloRazor.csproj" />
 	</ItemGroup>
 
 </Project>

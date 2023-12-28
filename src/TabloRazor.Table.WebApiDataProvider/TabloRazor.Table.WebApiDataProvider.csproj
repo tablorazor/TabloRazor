@@ -15,6 +15,13 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageIcon>TabloRazorLogo.png</PackageIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\TabloRazor\TabloRazorLogo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.*" Condition="'$(TargetFramework)' == 'net6.0'" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.*" Condition="'$(TargetFramework)' == 'net7.0'" />
@@ -28,17 +35,5 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\TabloRazor\TabloRazor.csproj" PrivateAssets="all" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Update="TabloRazorLogo.png">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="TabloRazorLogo.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
 	</ItemGroup>
 </Project>
