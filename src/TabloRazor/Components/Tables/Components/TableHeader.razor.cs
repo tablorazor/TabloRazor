@@ -12,33 +12,67 @@
                 .ToString();
         }
 
-
         protected string GetSortIconClass(IColumn<TableItem> column)
         {
-            if (!column.SortColumn && column.Sortable) { return "sorting"; }
-            if (column.SortColumn && column.SortDescending) { return "sorting_desc"; }
-            if (column.SortColumn && !column.SortDescending) { return "sorting_desc"; }
+            if (!column.SortColumn && column.Sortable)
+            {
+                return "sorting";
+            }
+
+            if (column.SortColumn && column.SortDescending)
+            {
+                return "sorting_desc";
+            }
+
+            if (column.SortColumn && !column.SortDescending)
+            {
+                return "sorting_desc";
+            }
+
             return string.Empty;
         }
 
         protected IIconType GetSortIcon(IColumn<TableItem> column)
         {
-            if (!column.SortColumn && column.Sortable) { return InternalIcons.Sortable; }
-            if (column.SortColumn && column.SortDescending) { return InternalIcons.Sort_Desc; }
-            if (column.SortColumn && !column.SortDescending) { return InternalIcons.Sort_Asc; }
+            if (!column.SortColumn && column.Sortable)
+            {
+                return InternalIcons.Sortable;
+            }
+
+            if (column.SortColumn && column.SortDescending)
+            {
+                return InternalIcons.Sort_Desc;
+            }
+
+            if (column.SortColumn && !column.SortDescending)
+            {
+                return InternalIcons.Sort_Asc;
+            }
 
             return null;
         }
 
         protected bool? SelectedValue()
         {
-            if (Table.SelectedItems == null || !Table.SelectedItems.Any()) { return false; }
-            if (Table.SelectedItems.Count == Table.CurrentItems.Count) { return true; }
-            if (Table.SelectedItems.Any()) { return null; }
-            return true;
+            if (Table.SelectedItems == null || !Table.SelectedItems.Any())
+            {
+                return false;
+            }
+
+            if (Table.SelectAllStrategy == SelectAllStrategy.AllPages && Table.SelectedItems.Count == Table.TotalCount)
+            {
+                return true;
+            }
+
+            if (Table.SelectAllStrategy != SelectAllStrategy.AllPages && Table.SelectedItems.Count == Table.CurrentItems.Count)
+            {
+                return true;
+            }
+
+            return null;
         }
 
-        protected void ToogleSelected()
+        protected void ToggleSelected(bool? value)
         {
             var selected = SelectedValue();
             if (selected != true)
@@ -50,8 +84,5 @@
                 Table.UnSelectAll();
             }
         }
-
     }
-
-
 }
