@@ -8,6 +8,8 @@ Minimal javascript!
 ### Getting Started Templates
 [TabloRazor.Templates](https://github.com/TabloRazor/TabloRazor.Templates)
 
+### Build 
+[![Build](https://github.com/TabloRazor/TabloRazor/actions/workflows/ci.yml/badge.svg)](https://github.com/TabloRazor/TabloRazor/actions/workflows/ci.yml?branch=master)
 ### Nuget
 [TabloRazor](https://www.nuget.org/packages/TabloRazor/)
 

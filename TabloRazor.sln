@@ -32,9 +32,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AE73
 		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabloRazor.Assets", "src\TabloRazor.Assets\TabloRazor.Assets.csproj", "{C2C3184E-3655-4EB3-881A-595BBF672588}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabloRazor.Table.WebApiDataProvider", "src\TabloRazor.Table.WebApiDataProvider\TabloRazor.Table.WebApiDataProvider.csproj", "{2FAD1630-6F46-4F33-9C7C-B38D25710669}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{4CD62C60-20D7-4123-94B0-0E1D6C9C86D4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
