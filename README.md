@@ -11,8 +11,7 @@ Minimal javascript!
 ### Build 
 [![Build](https://github.com/TabloRazor/TabloRazor/actions/workflows/ci.yml/badge.svg)](https://github.com/TabloRazor/TabloRazor/actions/workflows/ci.yml?branch=master)
 ### Nuget
-[TabloRazor](https://www.nuget.org/packages/TabloRazor/)
-
+[![Nuget](https://img.shields.io/nuget/v/TabloRazor.svg)](https://www.nuget.org/packages/TabloRazor/)
 ***Work ongoing***
 
 
