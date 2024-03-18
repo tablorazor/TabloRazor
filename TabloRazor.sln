@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{4CD62C
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabloRazor.Table.WebApiDataProvider", "src\TabloRazor.Table.WebApiDataProvider\TabloRazor.Table.WebApiDataProvider.csproj", "{5C116126-0F1D-43EF-9A0D-E19A5BD94691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,14 +73,10 @@ Global
 		{0AF8928D-CF36-464F-89A5-C3757426AFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF8928D-CF36-464F-89A5-C3757426AFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF8928D-CF36-464F-89A5-C3757426AFBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2C3184E-3655-4EB3-881A-595BBF672588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2C3184E-3655-4EB3-881A-595BBF672588}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2C3184E-3655-4EB3-881A-595BBF672588}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2C3184E-3655-4EB3-881A-595BBF672588}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FAD1630-6F46-4F33-9C7C-B38D25710669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FAD1630-6F46-4F33-9C7C-B38D25710669}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FAD1630-6F46-4F33-9C7C-B38D25710669}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FAD1630-6F46-4F33-9C7C-B38D25710669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C116126-0F1D-43EF-9A0D-E19A5BD94691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C116126-0F1D-43EF-9A0D-E19A5BD94691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C116126-0F1D-43EF-9A0D-E19A5BD94691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C116126-0F1D-43EF-9A0D-E19A5BD94691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
