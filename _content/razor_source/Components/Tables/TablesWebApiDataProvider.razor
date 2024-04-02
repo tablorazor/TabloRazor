@@ -1,0 +1,70 @@
+﻿@using TabloRazor.Components.Tables.Components;
+@using TabloRazor.Components.Tables;
+@using TabloRazor.Table.WebApiDataProvider
+@using TailoredApps.Shared.Querying
+@inject NavigationManager NavigationManager
+<Table Item="Item" PageSize="10"  DataProvider="customDataProvider"
+        @bind="SelectedItems">
+     <HeaderTemplate>
+         <strong>Items</strong>
+     </HeaderTemplate>
+
+     <ChildContent>
+         <Column Item="Item" Property="e => e.Name" Title="Customer" Sortable>
+            <EditorTemplate>
+                <input type="text" class="form-control" @bind-value="@context.Name" />
+            </EditorTemplate>
+        </Column>
+    </ChildContent>
+</Table>
+
+@code {
+
+    public class Item
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    #region Classes required for utilization TabloRazor.Table.WebApiDataProvider
+    public class ItemRequest : IPagedAndSortedRequest<ItemResponse, ItemRequestQuery, Item>
+    {
+        public int? Page { get; set; }
+        public int? Count { get; set; }
+
+        public bool IsPagingSpecified => Page.HasValue && Count.HasValue;
+
+        public string SortField { get; set; }
+        public SortDirection? SortDir { get; set; }
+
+        public bool IsSortingSpecified => !string.IsNullOrWhiteSpace(SortField) && SortDir.HasValue;
+
+        public ItemRequestQuery Filter { get; set; }
+
+        public bool IsSortBy(string fieldName) => string.Equals(SortField, fieldName, StringComparison.InvariantCultureIgnoreCase);
+    }
+    public class ItemResponse : IPagedResult<Item>
+    {
+        public ICollection<Item> Results { get; set; }
+        public int Count { get; set; }
+    }
+    public class ItemRequestQuery : QueryBase
+    {
+    }
+    #endregion
+
+
+    private string currentUrl;
+
+    protected override void OnInitialized()
+    {
+        currentUrl = NavigationManager.BaseUri;
+        customDataProvider =  new ListDataProvider<Item, ItemRequest, ItemResponse, ItemRequestQuery>(new MockableHttpClient(new System.Net.Http.HttpClient()), new ItemRequest { }, currentUrl + "/_content/Tabler.Docs/testdata/dumb.json");
+    }
+
+    public List<Item> SelectedItems { get; set; }
+
+    private IDataProvider<Item> customDataProvider;
+
+
+}
