@@ -1,0 +1,13 @@
+{
+  "results": [
+    {
+      "Id": 1,
+      "Name": "This is some dumb data returned from json file for test purpose, but you should use some webapi with paging and sorting capabilities"
+    },
+    {
+      "Id": 2,
+      "Name": "For more information how to get such result please refer to https://github.com/tailored-apps/SharedComponents"
+    }
+  ],
+  "count": 2
+}
